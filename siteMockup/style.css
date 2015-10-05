@@ -1,0 +1,82 @@
+body {
+	font-family: 'Montserrat', 'Helvetica Neue', "Arial", sans-serif;
+	/*font-family: "Comic Sans MS", "Comic Sans", cursive;*/
+	text-align: left;
+}
+
+p {
+
+}
+p.tagline { /* for the clever tagline */
+	color: blue;
+	font-size: 12pt;
+	text-align: center;
+}
+
+div {
+	color: black;
+	font-size: 12pt;
+}
+div.selector { /* div for date/location selectors */
+	background-color: #BB0000;
+}
+div.location { /* div for locations */
+	background-color: #FCFCFC;
+	box-shadow: 0px 3px 2px #BBBBBB;
+	margin: 1cm 1cm 1cm 1cm;
+	border-radius: 3px;
+	border: 1px solid #DDDDDD;
+}
+div.station { /* div for stations */
+	background-color: #DDDDDD;
+}
+div.day { /* div for invdividual days */
+	display: inline-block;
+	vertical-align: text-top;
+	/* top right bottom left */
+	padding: 0cm 1cm 0cm 0cm;
+	background-color: #CCCCCC;
+}
+
+h1 {
+
+}
+h1.title { /* the main title */
+	color: gray;
+	font-size: 64pt;
+	text-align: center;
+}
+
+h2 { /* all subheadings */
+	color: red;
+	margin: .25cm .25cm .25cm .25cm;
+}
+h2.locationtitle { /* heading for locations */
+	font-size: 40pt;
+}
+h2.stationtitle { /* heading for stations */
+	font-size: 24pt;
+}
+h2.daytitle { /* heading for days */
+	font-size: 14pt;
+}
+
+ul {
+
+}
+ul.nav { /* list for navigation buttons */
+	background-color: #FF0000;
+	text-align: center;
+}
+ul.menu { /* an unordered list for menu items */
+	background-color: #AAAAAA;
+}
+li {
+
+}
+li.nav { /* list elements in the nav bar */
+	display: inline-block;
+	vertical-align: text-top;
+	/* top right bottom left */
+	padding: 0cm 1cm 0cm 1cm;
+}
