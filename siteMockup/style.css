@@ -2,13 +2,18 @@ body {
 	font-family: 'Montserrat', 'Helvetica Neue', "Arial", sans-serif;
 	/*font-family: "Comic Sans MS", "Comic Sans", cursive;*/
 	text-align: left;
+	background-color: lightgray;
+	font-weight: lighter;
 }
+
+/* cards should start closed */
+.startHidden { display: none; }
 
 p {
 
 }
 p.tagline { /* for the clever tagline */
-	color: blue;
+	color: #333;
 	font-size: 12pt;
 	text-align: center;
 }
@@ -18,24 +23,25 @@ div {
 	font-size: 12pt;
 }
 div.selector { /* div for date/location selectors */
-	background-color: #BB0000;
+	background-color: red;
 }
 div.location { /* div for locations */
 	background-color: #FCFCFC;
-	box-shadow: 0px 3px 2px #BBBBBB;
+	box-shadow: 0px 3px 2px #BBB;
 	margin: 1cm 1cm 1cm 1cm;
 	border-radius: 3px;
-	border: 1px solid #DDDDDD;
+	border: 1px solid #BBB;
 }
 div.station { /* div for stations */
-	background-color: #DDDDDD;
+	background-color: #DDD;
+	display: inline;
 }
 div.day { /* div for invdividual days */
 	display: inline-block;
 	vertical-align: text-top;
 	/* top right bottom left */
 	padding: 0cm 1cm 0cm 0cm;
-	background-color: #CCCCCC;
+	background-color: #CCC;
 }
 
 h1 {
@@ -45,14 +51,16 @@ h1.title { /* the main title */
 	color: gray;
 	font-size: 64pt;
 	text-align: center;
+	margin-top: 1cm;
+	margin-bottom: .5cm;
 }
 
 h2 { /* all subheadings */
-	color: red;
+	color: black;
 	margin: .25cm .25cm .25cm .25cm;
 }
 h2.locationtitle { /* heading for locations */
-	font-size: 40pt;
+	font-size: 32pt;
 }
 h2.stationtitle { /* heading for stations */
 	font-size: 24pt;
@@ -79,4 +87,11 @@ li.nav { /* list elements in the nav bar */
 	vertical-align: text-top;
 	/* top right bottom left */
 	padding: 0cm 1cm 0cm 1cm;
+}
+
+a.locationtitle {
+	/* can't think of a good color for the card headers yet,
+	   black just doesn't say "click me" but nothing else looks good */
+	color: black;
+	text-decoration: none;
 }

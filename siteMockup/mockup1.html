@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script>
 			function getContent(name) {
 				console.log("getContent script called with '" + name + "'");
@@ -11,6 +11,14 @@
 			console.log("onload script called, calling getContent...");
 			window.onload = getContent("menus.txt");
 		</script>
+		<script>
+			$(document).ready(function() {
+				// there should be a separate toggle for each card and its id
+				// the number in toggle() is milliseconds for transition
+				$("#collapsebutton1").click(function() { $("#collapsible1").toggle(300); });
+				$("#collapsebutton2").click(function() { $("#collapsible2").toggle(300); });
+			});
+		</script>
 
 		<meta charset="UTF-8"> 
 		<link rel="stylesheet" href="style.css">
@@ -18,7 +26,7 @@
 	</head>
 	<body>
 		<h1 class="title">CleverlyNamedBuffs</h1>
-		<p class="tagline">The quick brown fox jumps over the lazy dog.</p>
+		<p class="tagline">Parsing menus so you don't have to.</p>
 		<div class="selector">
 			<ul class="nav">
 				<li class="nav">[select location]</li>
@@ -26,8 +34,51 @@
 				<li class="nav">[select vegetarian]</li>
 			</ul>
 		</div>
+
 		<div class="location">
-			<h2 class="locationtitle">Location 1 - hours</h1>
+			
+			<h2 class="locationtitle" id="collapsebutton1">
+				<a class="locationtitle" href="javascript:void(0);">
+					C4C  -  Persian Station  -  10:00am to 8:00pm
+				</a>
+			</h1>
+			
+			<!-- this div is what actually opens and closes
+				 startHidden is used with css to start all cards as closed
+				 collapsible1 is used with collapsebutton1 to make it toggle when the title is clicked -->
+			<div class="startHidden" id="collapsible1">
+			<div class="day">
+				<h2 class="daytitle">Day 1</h2>
+				<ul class="menu">
+					<li>item1</li>
+					<li>item2</li>
+					<li>item3</li>
+				</ul>
+			</div>
+			<div class="day">
+				<h2 class="daytitle">Day 2</h2>
+				<ul class="menu">
+					<li>item1</li>
+					<li>item2</li>
+				</ul>
+			</div>
+			</div> <!-- collapsible -->
+
+		</div> <!-- location -->
+
+		<!-- redundant code for example purposes -->
+		<div class="location">
+			
+			<h2 class="locationtitle" id="collapsebutton2">
+				<a class="locationtitle" href="javascript:void(0);">
+					Farrand  -  10:00am to 8:00pm
+				</a>
+			</h1>
+			
+			<!-- this div is what actually opens and closes
+				 startHidden is used with css to start all cards as closed
+				 collapsible2 is used with collapsebutton2 to make it toggle when the title is clicked -->
+			<div class="startHidden" id="collapsible2">
 			<div class="station">
 				<h2 class="stationtitle">Station 1</h2>
 				<div class="day">
@@ -64,32 +115,9 @@
 					</ul>
 				</div>
 			</div>
-		</div>
-		<div class="location">
-			<h2 class="locationtitle">Location 2 - hours      a</h1>
-			<div class="day">
-				<h2 class="daytitle">Day 1</h2>
-				<ul class="menu">
-					<li>item1</li>
-					<li>item2</li>
-				</ul>
-			</div>
-			<div class="day">
-				<h2 class="daytitle">Day 2</h2>
-				<ul class="menu">
-					<li>item1</li>
-					<li>item2</li>
-				</ul>
-			</div>
-			<div class="day">
-				<h2 class="daytitle">Day 3</h2>
-				<ul class="menu">
-					<li>item1</li>
-					<li>item2</li>
-					<li>item3</li>
-					<li>item4</li>
-				</ul>
-			</div>
-		</div>
+			</div> <!-- collapsible -->
+
+		</div> <!-- location -->
+		
 	</body>
 <html>
