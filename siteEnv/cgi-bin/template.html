@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script>
+			function getContent(name) {
+				console.log("getContent script called with '" + name + "'");
+			}
+		</script>
+		<script>
+			console.log("onload script called, calling getContent...");
+			window.onload = getContent("menus.txt");
+		</script>
+		<script>
+			$(document).ready(function() {
+				// there should be a separate toggle for each card and its id
+				// the number in toggle() is milliseconds for transition
+<!-- &&Ids&& -->
+				$("#&&ID&&").click(function() { $("#&&ID&&").toggle(300); });
+<!-- &&IDs&& -->
+			});
+		</script>
+
+		<meta charset="UTF-8"> 
+		<link rel="stylesheet" type='text/css' href="/style.css">
+		<title>FOOD</title>
+	</head>
+	<body>
+		<h1 class="title">CleverlyNamedBuffs</h1>
+		<p class="tagline">Parsing menus so you don't have to.</p>
+		<div class="selector">
+			<ul class="nav">
+				<li class="nav">[select location]</li>
+				<li class="nav">[select day]</li>
+				<li class="nav">[select vegetarian]</li>
+			</ul>
+		</div>
+<!-- ##Location## -->
+		<div class="location">
+			
+			<h2 class="locationtitle" id="collapsebutton1">
+				<a class="locationtitle" href="javascript:void(0);">
+<!-- Title -->
+				</a>
+			</h2>
+			
+			<!-- this div is what actually opens and closes
+				 startHidden is used with css to start all cards as closed
+				 collapsible1 is used with collapsebutton1 to make it toggle when the title is clicked -->
+			<div class="startHidden" id="
+<!-- &&ID&& -->
+			">
+<!-- ##Day## -->
+			<div class="day">
+				<h2 class="daytitle">
+<!-- Day and Time -->
+				</h2>
+				<ul class="menu">
+<!-- ##Menu## -->
+					<li>
+<!-- Item -->
+					</li>
+<!-- @@Menu@@ -->
+				</ul>
+			</div>
+<!-- @@Day@@ -->
+			</div> <!-- collapsible -->
+
+		</div> <!-- location -->
+<!-- @@Location@@ -->
+	</body>
+</html>

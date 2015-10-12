@@ -1,57 +1,40 @@
 #!/home/seth/anaconda/bin/python
+'''
+This is version two. It automatically parses a template in html and 
+inserts information into it. This will bridge the gap between Peters
+html work and my python work.
 
-top = '''
-<!DOCTYPE html>
-<html>
-    <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script>
-            function getContent(name) {
-                console.log("getContent script called with '" + name + "'");
-            }
-        </script>
-        <script>
-            console.log("onload script called, calling getContent...");
-            window.onload = getContent("menus.txt");
-        </script>
-
-        <meta charset="UTF-8"> 
-        <link rel="stylesheet" href="style.css">
-        <title>FOOD</title>
-    </head>
-    <body>
-        <h1 class="title">CleverlyNamedBuffs</h1>
-        <p class="tagline">The quick brown fox jumps over the lazy dog.</p>
-        <div class="selector">
-            <ul class="nav">
-                <li class="nav">[select location]</li>
-                <li class="nav">[select day]</li>
-                <li class="nav">[select vegetarian]</li>
-            </ul>
-        </div>
 '''
 
-locations = ['place1','place2','place3','place4']
+with open('../template.txt','r') as f:
+	template = f.read()
+
+parts = template.split('\n<!-- ##')
+
+static = parts[0]
+
+print static
+
 locData = {
-'place1':
+'C4C-Persian':
 	{'days':['day1','day2'],
 	'menus':
 		{'day1':['food1','food2'],
 		'day2':['food3','food4']}
 	}
-'place2':
+'Farrand':
     {'days':['day1','day2'],
     'menus':
         {'day1':['food1','food2'],
         'day2':['food3','food4']}
     }
-'place3':
+'Sewall':
     {'days':['day1','day2'],
     'menus':
         {'day1':['food1','food2'],
         'day2':['food3','food4']}
     }
-'place4':
+'C4C-Grab and Go':
     {'days':['day1','day2'],
     'menus':
         {'day1':['food1','food2'],
@@ -59,8 +42,10 @@ locData = {
     }
 }
 
+
+'''
 cards = ''
-for spot in locations:
+for spot in locData:
 	dic = locData[spot]
 	cards += '\t\t<div class="location">\n'
 	cards += '\t\t\t<h1 class="locationtitle">'+spot+'</h1>\n'
@@ -82,3 +67,4 @@ cards += '\t</body>\n'
 print 'Content-type: text/html'
 print
 print top+card
+'''

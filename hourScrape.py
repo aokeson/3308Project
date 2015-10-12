@@ -45,6 +45,7 @@ def main():
 		for i in lis[3:12]:
 			data.append(re.sub('<.+?>','',i))
 		out[name] =  filter(lambda s: hasDay(s) or hasTime(s),data)
-	print out
+	for key in out:
+		print key + ': '+str(out[key])
 
 main()
