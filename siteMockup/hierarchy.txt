@@ -1,0 +1,5 @@
+Day selector - top bar above cards
+Location (e.g. Farrand/C4C) - these are cards
+\- [OPTIONAL] Station (e.g. Persian) - these are sub-headings that also collapse, inside cards
+   \- [OPTIONAL] Meal (e.g. Breakfast/Lunch/Dinner) - horizonally aligned blocks for containing separate menus
+      \- Menu - list of food items - unordered lists
