@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import urllib2
 from lxml import html
 
