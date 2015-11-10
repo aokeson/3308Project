@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="UTF-8"> 
+		<title>FOOD</title>
+
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script>
 			function getContent(name) {
@@ -20,26 +23,26 @@
 			});
 		</script>
 
-		<meta charset="UTF-8"> 
+		<!-- Google font -->
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="style.css">
-		<title>FOOD</title>
 	</head>
 	<body>
 		<h1 class="title">CleverlyNamedBuffs</h1>
-		<p class="tagline">Parsing menus so you don't have to.</p>
+		<p id="taglineContent" class="tagline">Because chicken nuggets won't find themselves.</p>
 		<div class="selector">
 			<ul class="nav">
-				<li class="nav">[select location]</li>
-				<li class="nav">[select day]</li>
-				<li class="nav">[select vegetarian]</li>
+				<li class="nav">today</li>
+				<li class="nav">tomorrow</li>
+				<li class="nav">wednesday</li>
 			</ul>
 		</div>
 
 		<div class="location">
 			
 			<h2 class="locationtitle" id="collapsebutton1">
-				<a class="locationtitle" href="javascript:void(0);">
-					C4C  -  Persian Station  -  10:00am to 8:00pm
+				<a class="title" href="javascript:void(0);">
+					C4C &nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp; 10:00am to 8:00pm
 				</a>
 			</h1>
 			
@@ -47,73 +50,42 @@
 				 startHidden is used with css to start all cards as closed
 				 collapsible1 is used with collapsebutton1 to make it toggle when the title is clicked -->
 			<div class="startHidden" id="collapsible1">
-			<div class="day">
-				<h2 class="daytitle">Day 1</h2>
-				<ul class="menu">
-					<li>item1</li>
-					<li>item2</li>
-					<li>item3</li>
-				</ul>
-			</div>
-			<div class="day">
-				<h2 class="daytitle">Day 2</h2>
-				<ul class="menu">
-					<li>item1</li>
-					<li>item2</li>
-				</ul>
-			</div>
-			</div> <!-- collapsible -->
-
-		</div> <!-- location -->
-
-		<!-- redundant code for example purposes -->
-		<div class="location">
-			
-			<h2 class="locationtitle" id="collapsebutton2">
-				<a class="locationtitle" href="javascript:void(0);">
-					Farrand  -  10:00am to 8:00pm
-				</a>
-			</h1>
-			
-			<!-- this div is what actually opens and closes
-				 startHidden is used with css to start all cards as closed
-				 collapsible2 is used with collapsebutton2 to make it toggle when the title is clicked -->
-			<div class="startHidden" id="collapsible2">
+			<!-- this div is optional (C4C only probs) -->
 			<div class="station">
-				<h2 class="stationtitle">Station 1</h2>
-				<div class="day">
-					<h2 class="daytitle">Day 1</h2>
+
+				<h2 class="stationtitle" id="collapsebutton2">
+					<a class="title" href="javascript:void(0);">
+						Asian Station &nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp; 9:00am to 4:00pm
+					</a>
+				</h1>
+
+				<div class="startHidden" id="collapsible2">
+				<!-- the meal divs are also optional -->
+				<div class="meal">
+					<h2 class="mealtitle">Breakfast</h2>
 					<ul class="menu">
-						<li>item1</li>
-						<li>item2</li>
+						<li class="menuitem" >item1</li>
+						<li class="menuitem" >item2</li>
 					</ul>
 				</div>
-				<div class="day">
-					<h2 class="daytitle">Day 2</h2>
+				<div class="meal">
+					<h2 class="mealtitle">Lunch</h2>
 					<ul class="menu">
-						<li>item1</li>
-						<li>item2</li>
-						<li>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa~~~</li>
+						<li class="menuitem" >item1</li>
+						<li class="menuitem" >item2</li>
+						<li class="menuitem" >aaaaaaaaaaaaaaaaaaaaaaaaaaa~~~</li>
 					</ul>
 				</div>
-			</div>
-			<div class="station">
-				<h2 class="stationtitle">Station 2</h2>
-				<div class="day">
-					<h2 class="daytitle">Day 1</h2>
+				<div class="meal">
+					<h2 class="mealtitle">Dinner</h2>
 					<ul class="menu">
-						<li>item1</li>
-						<li>item2</li>
-						<li>item3</li>
+						<li class="menuitem" >item1</li>
+						<li class="menuitem" >item2</li>
+						<li class="menuitem" >item3</li>
 					</ul>
 				</div>
-				<div class="day">
-					<h2 class="daytitle">Day 2</h2>
-					<ul class="menu">
-						<li>item1</li>
-						<li>item2</li>
-					</ul>
-				</div>
+				</div> <!-- collapsible -->
+
 			</div>
 			</div> <!-- collapsible -->
 

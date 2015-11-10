@@ -1,6 +1,5 @@
 body {
-	font-family: 'Montserrat', 'Helvetica Neue', "Arial", sans-serif;
-	/*font-family: "Comic Sans MS", "Comic Sans", cursive;*/
+	font-family: 'Source Sans Pro', sans-serif;
 	text-align: left;
 	background-color: lightgray;
 	font-weight: lighter;
@@ -13,7 +12,7 @@ p {
 
 }
 p.tagline { /* for the clever tagline */
-	color: #333;
+	color: #777;
 	font-size: 12pt;
 	text-align: center;
 }
@@ -23,32 +22,48 @@ div {
 	font-size: 12pt;
 }
 div.selector { /* div for date/location selectors */
-	background-color: red;
+	background-color: #CFB87C;
+
+	/* don't make the bar take up the entire width */
+	width: 60%;
+	margin: 0 auto;
 }
 div.location { /* div for locations */
 	background-color: #FCFCFC;
-	box-shadow: 0px 3px 2px #BBB;
-	margin: 1cm 1cm 1cm 1cm;
-	border-radius: 3px;
+	/* card border and shadow use the same color */
 	border: 1px solid #BBB;
+	box-shadow: 0px 2px 2px #BBB;
+	margin: 1cm 1cm 1cm 1cm;
+	border-radius: 2px;
 }
 div.station { /* div for stations */
 	background-color: #DDD;
 	display: inline;
 }
-div.day { /* div for invdividual days */
+div.meal { /* div for invdividual days */
 	display: inline-block;
 	vertical-align: text-top;
+	background-color: #EEE;
+	width: auto;
+
+	/* internal padding */
 	/* top right bottom left */
 	padding: 0cm 1cm 0cm 0cm;
-	background-color: #CCC;
+
+	margin-bottom: .5cm;
+	margin-left: .25cm;
+
+	/* black bar on the left */
+	border-left-style: solid;
+	border-color: #353535;
+	border-width: 3px;
 }
 
 h1 {
 
 }
 h1.title { /* the main title */
-	color: gray;
+	color: #565A5C;
 	font-size: 64pt;
 	text-align: center;
 	margin-top: 1cm;
@@ -65,7 +80,7 @@ h2.locationtitle { /* heading for locations */
 h2.stationtitle { /* heading for stations */
 	font-size: 24pt;
 }
-h2.daytitle { /* heading for days */
+h2.mealtitle { /* heading for days */
 	font-size: 14pt;
 }
 
@@ -73,11 +88,11 @@ ul {
 
 }
 ul.nav { /* list for navigation buttons */
-	background-color: #FF0000;
 	text-align: center;
+	width: 50%;
 }
 ul.menu { /* an unordered list for menu items */
-	background-color: #AAAAAA;
+	/*background-color: #AAAAAA;*/
 }
 li {
 
@@ -88,8 +103,11 @@ li.nav { /* list elements in the nav bar */
 	/* top right bottom left */
 	padding: 0cm 1cm 0cm 1cm;
 }
+li.menuitem {
 
-a.locationtitle {
+}
+
+a.title {
 	/* can't think of a good color for the card headers yet,
 	   black just doesn't say "click me" but nothing else looks good */
 	color: black;
