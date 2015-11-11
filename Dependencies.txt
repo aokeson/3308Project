@@ -1,0 +1,7 @@
+python package lxml 
+	- "pip install lxml"
+mysql 
+	- Ubuntu: "sudo apt-get install mysql"
+	- IOS: "brew install mysql"
+
+
