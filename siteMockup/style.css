@@ -1,8 +1,11 @@
 body {
 	font-family: 'Source Sans Pro', sans-serif;
 	text-align: left;
-	background-color: lightgray;
+	background-color: #FCFCFC;
+	
 	font-weight: lighter;
+
+	margin: 0;
 }
 
 /* cards should start closed */
@@ -25,16 +28,21 @@ div.selector { /* div for date/location selectors */
 	background-color: #CFB87C;
 
 	/* don't make the bar take up the entire width */
-	width: 60%;
+	width: 40%;
 	margin: 0 auto;
+
+	border-radius: 10px;
 }
 div.location { /* div for locations */
-	background-color: #FCFCFC;
+	background-color: #EEE;
 	/* card border and shadow use the same color */
 	border: 1px solid #BBB;
 	box-shadow: 0px 2px 2px #BBB;
 	margin: 1cm 1cm 1cm 1cm;
 	border-radius: 2px;
+	width: 80%;
+	margin: 0 auto;
+	margin-bottom: .5cm;
 }
 div.station { /* div for stations */
 	background-color: #DDD;
@@ -43,7 +51,7 @@ div.station { /* div for stations */
 div.meal { /* div for invdividual days */
 	display: inline-block;
 	vertical-align: text-top;
-	background-color: #EEE;
+	background-color: #CACACA;
 	width: auto;
 
 	/* internal padding */
@@ -58,16 +66,25 @@ div.meal { /* div for invdividual days */
 	border-color: #353535;
 	border-width: 3px;
 }
+div.expandbutton {
+	background-color: #DDD;
+	border-color: darkgray;
+	border-top-style: solid;
+	border-top-width: 1px;
+	height: .8cm;
+}
 
 h1 {
 
 }
 h1.title { /* the main title */
-	color: #565A5C;
+	background-color: black;
+	color: #666A6C;
 	font-size: 64pt;
 	text-align: center;
-	margin-top: 1cm;
+	margin: 0;
 	margin-bottom: .5cm;
+	padding-bottom: .25cm;
 }
 
 h2 { /* all subheadings */
@@ -89,7 +106,6 @@ ul {
 }
 ul.nav { /* list for navigation buttons */
 	text-align: center;
-	width: 50%;
 }
 ul.menu { /* an unordered list for menu items */
 	/*background-color: #AAAAAA;*/
@@ -105,6 +121,23 @@ li.nav { /* list elements in the nav bar */
 }
 li.menuitem {
 
+}
+
+img {
+
+}
+img.expandicon_location {
+	position: relative;
+	float: left;
+	height: 1.2cm;
+	margin-top: .35cm;
+	right: .6cm;
+}
+img.expandicon_station {
+	position: relative;
+	float: left;
+	height: .8cm;
+	margin: .2cm;
 }
 
 a.title {

@@ -18,8 +18,8 @@
 			$(document).ready(function() {
 				// there should be a separate toggle for each card and its id
 				// the number in toggle() is milliseconds for transition
-				$("#collapsebutton1").click(function() { $("#collapsible1").toggle(300); });
-				$("#collapsebutton2").click(function() { $("#collapsible2").toggle(300); });
+				$("#locbutton1").click(function() { $("#collapsible1").toggle(300); });
+				$("#locbutton2").click(function() { $("#collapsible2").toggle(300); });
 			});
 		</script>
 
@@ -39,9 +39,11 @@
 		</div>
 
 		<div class="location">
+
+			<img class="expandicon_location" id="locbutton1" src="img/icon1.png" alt="" href="javascript:void(0);">
 			
 			<h2 class="locationtitle" id="collapsebutton1">
-				<a class="title" href="javascript:void(0);">
+				<a class="title">
 					C4C &nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp; 10:00am to 8:00pm
 				</a>
 			</h1>
@@ -53,8 +55,10 @@
 			<!-- this div is optional (C4C only probs) -->
 			<div class="station">
 
+				<img class="expandicon_station" id="locbutton2" src="img/icon2.png" alt="" href="javascript:void(0);">
+
 				<h2 class="stationtitle" id="collapsebutton2">
-					<a class="title" href="javascript:void(0);">
+					<a class="title">
 						Asian Station &nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp; 9:00am to 4:00pm
 					</a>
 				</h1>
