@@ -130,14 +130,15 @@ img.expandicon_location {
 	position: relative;
 	float: left;
 	height: 1.2cm;
-	margin-top: .35cm;
+	margin-top: .12cm;
 	right: .6cm;
 }
 img.expandicon_station {
 	position: relative;
 	float: left;
 	height: .8cm;
-	margin: .2cm;
+	margin-top: .15cm;
+	right: .4cm;
 }
 
 a.title {
@@ -145,4 +146,12 @@ a.title {
 	   black just doesn't say "click me" but nothing else looks good */
 	color: black;
 	text-decoration: none;
+}
+
+div.clickable { /* clickable elements have the hand cursor on them */
+	cursor: pointer;
+	transition: .5s background-color;
+}
+div.clickable:hover { /* color indication on link hover */
+  background-color: #CFB87C;
 }
