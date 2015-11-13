@@ -73,6 +73,14 @@ div.expandbutton {
 	border-top-width: 1px;
 	height: .8cm;
 }
+div.footer { /* content at the bottom of the screen */
+	background-color: darkgray;
+	width: fill;
+	font-size: 10pt;
+	text-align: center;
+	padding-top: .5cm;
+	/* the height of the footer element should be changed in the sticky footer code at the BOTTOM of this file */
+}
 
 h1 {
 
@@ -155,3 +163,28 @@ div.clickable { /* clickable elements have the hand cursor on them */
 div.clickable:hover { /* color indication on link hover */
   background-color: #CFB87C;
 }
+
+/* 
+the following is code to implement the sticky footer:
+*/
+
+html, body {
+	height: 100%;
+}
+.wrapper {
+	min-height: 100%;
+	height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
+	height: 100%;
+	margin: 0 auto -2.5cm; /* the bottom margin is the negative value of the footer's height */
+}
+.footer, .push {
+	height: 2.5cm; /* .push must be the same height as .footer */
+	/* this is the height of the footer, edit it HERE, AND in the last line of the .wrapper element above */
+}
+
+/*
+
+Sticky Footer by Ryan Fait
+http://ryanfait.com/
+
+*/
