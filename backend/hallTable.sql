@@ -1,0 +1,21 @@
+USE FamishedBuffs
+INSERT INTO 'DiningHalls' ('ID', 'Hall', 'Station') VALUES
+('FarG', 'Go Fresh @ farrand Grab-n-Go'),
+('Kitt', 'Kittredge Market'),
+('SewM', 'Sewall Market'),
+('VilM', 'Village market'),
+('VilG', 'Village grab-n-go'),
+('FarM', 'Farrand Market'),
+('ZelG', 'Zellers Grab-n-Go'),
+('SewD', 'Sewall'),
+('C4CD', 'Center for Community Dining', 'Asian Shi Pin'),
+('C4CD', 'Center for Community Dining', 'Black Coats'),
+('C4CD', 'Center for Community Dining', 'Desserts'),
+('C4CD', 'Center for Community Dining', 'Italian Cibo'),
+('C4CD', 'Center for Community Dining', 'Kosher'),
+('C4CD', 'Center for Community Dining', 'Latin Comida'),
+('C4CD', 'Center for Community Dining', 'Persian Ghaza'),
+('C4CD', 'Center for Community Dining', 'Smoke n Grill'),
+('C4CD', 'Center for Community Dining', 'Sushi'),
+('Libb', 'Libby'),
+('WTec', 'Weathertech');
