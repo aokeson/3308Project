@@ -1,12 +1,11 @@
-USE FamishedBuffs
+USE FamishedBuffs;
 INSERT INTO 'DiningHalls' ('ID', 'Hall', 'Station') VALUES
-('FarG', 'Go Fresh @ farrand Grab-n-Go'),
+('FarG', 'Go Fresh @ Farrand Grab-n-Go'),
 ('Kitt', 'Kittredge Market'),
 ('SewM', 'Sewall Market'),
-('VilM', 'Village market'),
-('VilG', 'Village grab-n-go'),
+('VilM', 'Village Market'),
+('VilG', 'Village Grab-n-Go'),
 ('FarM', 'Farrand Market'),
-('ZelG', 'Zellers Grab-n-Go'),
 ('SewD', 'Sewall'),
 ('C4CD', 'Center for Community Dining', 'Asian Shi Pin'),
 ('C4CD', 'Center for Community Dining', 'Black Coats'),
@@ -18,4 +17,7 @@ INSERT INTO 'DiningHalls' ('ID', 'Hall', 'Station') VALUES
 ('C4CD', 'Center for Community Dining', 'Smoke n Grill'),
 ('C4CD', 'Center for Community Dining', 'Sushi'),
 ('Libb', 'Libby'),
-('WTec', 'Weathertech');
+('WTec', 'Weathertech'),
+('C4CG', 'CU on the Run Grab-n-Go'),
+('Bakr', 'The Bakery'),
+('SewG', 'Sewall Grab-n-Go');
