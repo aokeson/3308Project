@@ -1,58 +1,76 @@
+#!/usr/bin/python
 import urllib2
 from lxml import html
 
 def hasDay(s):
-	days = ['Saturday','Sunday','Monday','Tuesday','Wednesday','Thursday','Friday']
-	for day in days:
-		tmp = s.find(day)
-		if tmp != -1:
-			return True
-	return False
+  days = ['Saturday','Sunday','Monday','Tuesday','Wednesday','Thursday','Friday']
+  for day in days:
+    tmp = s.find(day)
+    if tmp != -1:
+      return True
+  return False
 
 def hasTime(s):
-	reg = '[012]{0,1}[0-9]:[0-5][0-9]'
-	if re.match(reg,s):
-		return True
-	return False 
+  reg = '[012]{0,1}[0-9]:[0-5][0-9]'
+  if re.match(reg,s):
+    return True
+  return False
 
+def breakfastTable(menu):
+  table = open('breakfastMenuTable.sql', 'w')
+  table.truncate()
+  table.write('USE FamishedBuffs;\n')
+  table.write("INSERT INTO 'Breakfast' ('ID', 'Day', 'Item') VALUES\n")
+  for item in menu['Farrand and Libby']['mon']['breakfastRow']:
+    table.write("('Libb', 'Monday', '"+item+"'),\n")
+  for item in menu['Farrand and Libby']['tues']['breakfastRow']:
+    table.write("('Libb', 'Tuesday', '"+item+"'),\n")
+  for item in menu['Farrand and Libby']['wed']['breakfastRow']:
+    table.write("('Libb', 'Wednesday', '"+item+"'),\n")
+  for item in menu['Farrand and Libby']['thurs']['breakfastRow']:
+    table.write("('Libb', 'Thursday', '"+item+"'),\n")
+  for item in menu['Farrand and Libby']['fri']['breakfastRow']:
+    table.write("('Libb', 'Friday', '"+item+"'),\n")
+  for item in menu['Darley and Sewall']['mon']['breakfastRow']:
+    table.write("('VilG', 'Monday', '"+item+"'),\n")
+  for item in menu['Darley and Sewall']['tues']['breakfastRow']:
+    table.write("('VilG', 'Tuesday', '"+item+"'),\n")
+  for item in menu['Darley and Sewall']['wed']['breakfastRow']:
+    table.write("('VilG', 'Wednesday', '"+item+"'),\n")
+  for item in menu['Darley and Sewall']['thurs']['breakfastRow']:
+    table.write("('VilG', 'Thursday', '"+item+"'),\n")
+  for item in menu['Darley and Sewall']['fri']['breakfastRow']:
+    table.write("('VilG', 'Friday', '"+item+"'),\n")
+  for item in menu['Darley and Sewall']['sat']['breakfastRow']:
+    table.write("('VilG', 'Saturday', '"+item+"'),\n")
+  for item in menu['Darley and Sewall']['sun']['breakfastRow']:
+    table.write("('VilG', 'Sunday', '"+item+"'),\n")
+  size = table.tell()
+  table.truncate(size-2)
+  table.write(';')
+  table.close()
 
 def main():
-	urlBase = "https://housing.colorado.edu"
-	out = {}
-	places = [
-		("/center-community", 'Center for Community Dining'), #C4C is "special"
-		("/dining/locations-hours/cu-run-grab-n-go","CU on the Run Grab-n-Go"),
-		("/dining/locations-hours/farrandmarket","Farrand Market"),
-		("/dining/locations-hours/go-fresh-farrand-grab-n-go",'Go Fresh @ farrand Grab-n-Go'),
-		("/kittredgemarket",'Kittredge Market'),
-		("/dining/locations-hours/libby-dining-center" ,'Libby'),
-		("/dining/locations-hours/sewall-dining-center" ,'Sewall'),
-		("/dining/locations-hours/sewall-market",'Sewall Market' ),
-		("/dining/locations-hours/village-express-grab-n-go" ,'Village grab-n-go'),
-		("/dining/locations-hours/village-market" ,'Village market'),
-		("/dining/locations-hours/weathertech-cafe" ,'Weathertech'),
-		("/dining/locations-hours/zellers-grab-n-go" ,'Zellers Grab-n-Go'),
-	]
-	for url,name in places:
-		try:
-			url = urlBase+url
-			raw = urllib2.urlopen(url).read()
-			
-			html_tag = html.fromstring(raw)
-			table = html_tag.find_class('dcTable')[0].getchildren()[0].getchildren()
-			place = {}
-			curr = ''
-			for elem in table:
-				for e in elem.getchildren():
-					if e.tag == 'td':
-						if hasDay(e.text):
-							curr = e.text
-							place[curr] = []
-						else:
-							place[curr] += [e.text]
-			out[name] = place
-		except IndexError:
-			print name
-	print out
+  out = {}
+  places = [
+    ("https://housing.colorado.edu/sites/default/files/menus/week_menu_table_v3.html",'Darley and Sewall'),
+    ('https://housing.colorado.edu/sites/default/files/menus/week_menu_table_v4.html','Farrand and Libby')
+  ]
+  days = ['mon','tues','wed','thurs','fri','sat','sun'];
+  rows = ['breakfastRow','lunchRow','dinnerRow']
+  end = {}
+  for url,name in places:
+    raw = urllib2.urlopen(url).read()
+    html_tag = html.fromstring(raw)
+    place = {}
+    for day in days:
+      meals ={}
+      for c in html_tag.find_class(day):
+        menuItems = map(lambda x:x.text,c.getchildren()[0].getchildren())
+        meals[c.getparent().values()[0]] = menuItems
+      place[day] = meals
+    end[name]=place
+#  print(end)
+  breakfastTable(end)
 
 main()
