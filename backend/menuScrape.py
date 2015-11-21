@@ -20,31 +20,135 @@ def breakfastTable(menu):
   table = open('breakfastMenuTable.sql', 'w')
   table.truncate()
   table.write('USE FamishedBuffs;\n')
-  table.write("INSERT INTO 'Breakfast' ('ID', 'Day', 'Item') VALUES\n")
+  table.write("INSERT INTO `Breakfast` (`ID`, `Day`, `Item`) VALUES\n")
   for item in menu['Farrand and Libby']['mon']['breakfastRow']:
-    table.write("('Libb', 'Monday', '"+item+"'),\n")
+    item = item.replace('"',"'")
+    table.write("('Libb', 'Monday', \""+item[:-1]+"\"),\n")
   for item in menu['Farrand and Libby']['tues']['breakfastRow']:
-    table.write("('Libb', 'Tuesday', '"+item+"'),\n")
+    item = item.replace('"',"'")
+    table.write("('Libb', 'Tuesday', \""+item[:-1]+"\"),\n")
   for item in menu['Farrand and Libby']['wed']['breakfastRow']:
-    table.write("('Libb', 'Wednesday', '"+item+"'),\n")
+    item = item.replace('"',"'")
+    table.write("('Libb', 'Wednesday', \""+item[:-1]+"\"),\n")
   for item in menu['Farrand and Libby']['thurs']['breakfastRow']:
-    table.write("('Libb', 'Thursday', '"+item+"'),\n")
+    item = item.replace('"',"'")
+    table.write("('Libb', 'Thursday', \""+item[:-1]+"\"),\n")
   for item in menu['Farrand and Libby']['fri']['breakfastRow']:
-    table.write("('Libb', 'Friday', '"+item+"'),\n")
+    item = item.replace('"',"'")
+    table.write("('Libb', 'Friday', \""+item[:-1]+"\"),\n")
   for item in menu['Darley and Sewall']['mon']['breakfastRow']:
-    table.write("('VilG', 'Monday', '"+item+"'),\n")
+    item = item.replace('"',"'")
+    table.write("('VilG', 'Monday', \""+item[:-1]+"\"),\n")
   for item in menu['Darley and Sewall']['tues']['breakfastRow']:
-    table.write("('VilG', 'Tuesday', '"+item+"'),\n")
+    item = item.replace('"',"'")
+    table.write("('VilG', 'Tuesday', \""+item[:-1]+"\"),\n")
   for item in menu['Darley and Sewall']['wed']['breakfastRow']:
-    table.write("('VilG', 'Wednesday', '"+item+"'),\n")
+    item = item.replace('"',"'")
+    table.write("('VilG', 'Wednesday', \""+item[:-1]+"\"),\n")
   for item in menu['Darley and Sewall']['thurs']['breakfastRow']:
-    table.write("('VilG', 'Thursday', '"+item+"'),\n")
+    item = item.replace('"',"'")
+    table.write("('VilG', 'Thursday', \""+item[:-1]+"\"),\n")
   for item in menu['Darley and Sewall']['fri']['breakfastRow']:
-    table.write("('VilG', 'Friday', '"+item+"'),\n")
+    item = item.replace('"',"'")
+    table.write("('VilG', 'Friday', \""+item[:-1]+"\"),\n")
   for item in menu['Darley and Sewall']['sat']['breakfastRow']:
-    table.write("('VilG', 'Saturday', '"+item+"'),\n")
+    item = item.replace('"',"'")
+    table.write("('VilG', 'Saturday', \""+item[:-1]+"\"),\n")
   for item in menu['Darley and Sewall']['sun']['breakfastRow']:
-    table.write("('VilG', 'Sunday', '"+item+"'),\n")
+    item = item.replace('"',"'")
+    table.write("('VilG', 'Sunday', \""+item[:-1]+"\"),\n")
+  size = table.tell()
+  table.truncate(size-2)
+  table.write(';')
+  table.close()
+
+def lunchTable(menu):
+  table = open('lunchMenuTable.sql', 'w')
+  table.truncate()
+  table.write('USE FamishedBuffs;\n')
+  table.write("INSERT INTO `Lunch` (`ID`, `Day`, `Item`) VALUES\n")
+  for item in menu['Farrand and Libby']['mon']['lunchRow']:
+    item = item.replace('"',"'")
+    table.write("('Libb', 'Monday', \""+item[:-1]+"\"),\n")
+  for item in menu['Farrand and Libby']['tues']['lunchRow']:
+    item = item.replace('"',"'")
+    table.write("('Libb', 'Tuesday', \""+item[:-1]+"\"),\n")
+  for item in menu['Farrand and Libby']['wed']['lunchRow']:
+    item = item.replace('"',"'")
+    table.write("('Libb', 'Wednesday', \""+item[:-1]+"\"),\n")
+  for item in menu['Farrand and Libby']['thurs']['lunchRow']:
+    item = item.replace('"',"'")
+    table.write("('Libb', 'Thursday', \""+item[:-1]+"\"),\n")
+  for item in menu['Farrand and Libby']['fri']['lunchRow']:
+    item = item.replace('"',"'")
+    table.write("('Libb', 'Friday', \""+item[:-1]+"\"),\n")
+  for item in menu['Darley and Sewall']['mon']['lunchRow']:
+    item = item.replace('"',"'")
+    table.write("('VilG', 'Monday', \""+item[:-1]+"\"),\n")
+  for item in menu['Darley and Sewall']['tues']['lunchRow']:
+    item = item.replace('"',"'")
+    table.write("('VilG', 'Tuesday', \""+item[:-1]+"\"),\n")
+  for item in menu['Darley and Sewall']['wed']['lunchRow']:
+    item = item.replace('"',"'")
+    table.write("('VilG', 'Wednesday', \""+item[:-1]+"\"),\n")
+  for item in menu['Darley and Sewall']['thurs']['lunchRow']:
+    item = item.replace('"',"'")
+    table.write("('VilG', 'Thursday', \""+item[:-1]+"\"),\n")
+  for item in menu['Darley and Sewall']['fri']['lunchRow']:
+    item = item.replace('"',"'")
+    table.write("('VilG', 'Friday', \""+item[:-1]+"\"),\n")
+  for item in menu['Darley and Sewall']['sat']['lunchRow']:
+    item = item.replace('"',"'")
+    table.write("('VilG', 'Saturday', \""+item[:-1]+"\"),\n")
+  for item in menu['Darley and Sewall']['sun']['lunchRow']:
+    item = item.replace('"',"'")
+    table.write("('VilG', 'Sunday', \""+item[:-1]+"\"),\n")
+  size = table.tell()
+  table.truncate(size-2)
+  table.write(';')
+  table.close()
+
+def dinnerTable(menu):
+  table = open('dinnerMenuTable.sql', 'w')
+  table.truncate()
+  table.write('USE FamishedBuffs;\n')
+  table.write("INSERT INTO `Dinner` (`ID`, `Day`, `Item`) VALUES\n")
+  for item in menu['Farrand and Libby']['mon']['dinnerRow']:
+    item = item.replace('"',"'")
+    table.write("('Libb', 'Monday', \""+item[:-1]+"\"),\n")
+  for item in menu['Farrand and Libby']['tues']['breakfastRow']:
+    item = item.replace('"',"'")
+    table.write("('Libb', 'Tuesday', \""+item[:-1]+"\"),\n")
+  for item in menu['Farrand and Libby']['wed']['dinnerRow']:
+    item = item.replace('"',"'")
+    table.write("('Libb', 'Wednesday', \""+item[:-1]+"\"),\n")
+  for item in menu['Farrand and Libby']['thurs']['dinnerRow']:
+    item = item.replace('"',"'")
+    table.write("('Libb', 'Thursday', \""+item[:-1]+"\"),\n")
+  for item in menu['Farrand and Libby']['fri']['dinnerRow']:
+    item = item.replace('"',"'")
+    table.write("('Libb', 'Friday', \""+item[:-1]+"\"),\n")
+  for item in menu['Darley and Sewall']['mon']['dinnerRow']:
+    item = item.replace('"',"'")
+    table.write("('VilG', 'Monday', \""+item[:-1]+"\"),\n")
+  for item in menu['Darley and Sewall']['tues']['dinnerRow']:
+    item = item.replace('"',"'")
+    table.write("('VilG', 'Tuesday', \""+item[:-1]+"\"),\n")
+  for item in menu['Darley and Sewall']['wed']['dinnerRow']:
+    item = item.replace('"',"'")
+    table.write("('VilG', 'Wednesday', \""+item[:-1]+"\"),\n")
+  for item in menu['Darley and Sewall']['thurs']['dinnerRow']:
+    item = item.replace('"',"'")
+    table.write("('VilG', 'Thursday', \""+item[:-1]+"\"),\n")
+  for item in menu['Darley and Sewall']['fri']['dinnerRow']:
+    item = item.replace('"',"'")
+    table.write("('VilG', 'Friday', \""+item[:-1]+"\"),\n")
+  for item in menu['Darley and Sewall']['sat']['dinnerRow']:
+    item = item.replace('"',"'")
+    table.write("('VilG', 'Saturday', \""+item[:-1]+"\"),\n")
+  for item in menu['Darley and Sewall']['sun']['dinnerRow']:
+    item = item.replace('"',"'")
+    table.write("('VilG', 'Sunday', \""+item[:-1]+"\"),\n")
   size = table.tell()
   table.truncate(size-2)
   table.write(';')
@@ -72,5 +176,7 @@ def main():
     end[name]=place
 #  print(end)
   breakfastTable(end)
+  lunchTable(end)
+  dinnerTable(end)
 
 main()

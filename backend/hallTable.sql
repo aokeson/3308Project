@@ -1,5 +1,5 @@
 USE FamishedBuffs;
-INSERT INTO 'DiningHalls' ('ID', 'Hall') VALUES
+INSERT INTO `DiningHalls` (`ID`, `Hall`) VALUES
 ('FarG', 'Go Fresh @ Farrand Grab-n-Go'),
 ('Kitt', 'Kittredge Market'),
 ('SewM', 'Sewall Market'),

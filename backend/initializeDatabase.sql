@@ -1,3 +1,4 @@
+CREATE DATABASE FamishedBuffs;
 USE `FamishedBuffs`;
 
 CREATE TABLE IF NOT EXISTS `DiningHalls` (
