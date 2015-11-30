@@ -1,33 +1,36 @@
-CREATE DATABASE FamishedBuffs;
+CREATE DATABASE `FamishedBuffs` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+
 USE `FamishedBuffs`;
 
 CREATE TABLE IF NOT EXISTS `DiningHalls` (
-  `ID` varchar(4) DEFAULT NULL,
-  `Hall` varchar(64) DEFAULT NULL
+  `ID` int(1) NOT NULL auto_increment,
+  `Hall` varchar(64) NOT NULL,
+  `Station` varchar(64) DEFAULT NULL
 );
 
 CREATE TABLE IF NOT EXISTS `Hours` (
-  `ID` varchar(4) DEFAULT NULL,
-  `Open` varchar(6) DEFAULT NULL,
-  `Close` varchar(6) DEFAULT NULL,
-  `Day` varchar(10) DEFAULT NULL,
-  `Meal` varchar(15) DEFAULT NULL
+  `ID` int(1) NOT NULL auto_increment,
+  `Day` varchar(10) NOT NULL
+  `Open` varchar(6) NOT NULL,
+  `Close` varchar(6) NOT NULL,
+  `HallID` int(1) NOT NULL,
+  `Description` varchar(10) DEFAULT NULL
 );
 
 CREATE TABLE IF NOT EXISTS `Breakfast` (
-  `ID` varchar(4) DEFAULT NULL,
-  `Day` varchar(10) DEFAULT NULL,
-  `Item` varchar(64) DEFAULT NULL
+  `ID` int(1) NOT NULL auto_increment,
+  `Item` varchar(64)NOT NULL,
+  `HourID` int(1) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS `Lunch` (
-  `ID` varchar(4) DEFAULT NULL,
-  `Day` varchar(10) DEFAULT NULL,
-  `Item` varchar(64) DEFAULT NULL
+  `ID` int(1) NOT NULL auto_increment,
+  `Item` varchar(64) DEFAULT NULL,
+  `HourID` int(1) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS `Dinner` (
-  `ID` varchar(4) DEFAULT NULL,
-  `Day` varchar(10) DEFAULT NULL,
-  `Item` varchar(64) DEFAULT NULL
+  `ID` int(1) NOT NULL auto_increment,
+  `Item` varchar(64) DEFAULT NULL,
+  `HourID` int(1) NOT NULL
 );

@@ -1,23 +1,12 @@
 #!/usr/bin/python
 
-import urllib2
+
+import urllib2#, _mysql
 from lxml import html
-
-def hasDay(s):
-	days = ['Saturday','Sunday','Monday','Tuesday','Wednesday','Thursday','Friday']
-	for day in days:
-		tmp = s.find(day)
-		if tmp != -1:
-			return True
-	return False
-
-def hasTime(s):
-	reg = '[012]{0,1}[0-9]:[0-5][0-9]'
-	if re.match(reg,s):
-		return True
-	return False 
-
-
+##
+# Scrapes menus and returns a dict of results
+#
+#
 def main():
 	out = {}
 	places = [
@@ -25,20 +14,29 @@ def main():
 		('https://housing.colorado.edu/sites/default/files/menus/week_menu_table_v4.html','Farrand and Libby')
 	]
 	days = ['mon','tues','wed','thurs','fri','sat','sun'];
-	rows = ['breakfastRow','lunchRow','dinnerRow']
 	end = {}
 	for url,name in places:
-		raw = urllib2.urlopen(url).read()
-		html_tag = html.fromstring(raw)
-		place = {}
-		for day in days:
-			meals ={}
-			for c in html_tag.find_class(day):
-				menuItems = map(lambda x:x.text,c.getchildren()[0].getchildren())
-				meals[c.getparent().values()[0]] = menuItems
-			place[day] = meals
-		end[name]=place
-	print(end)
+		end[name]=scrapeSite(url,days)
+	return end
 
-main()
+def scrapeSite(url,fields):
+	html_tag = getTree(url)
+	place = {}
+	for value in fields:
+		place[value] = retrieveElements(html_tag,value)
+	return place
 
+def retrieveElements(tree,value):
+		out ={}
+		for c in tree.find_class(value):
+			items = map(lambda x:x.text,c.getchildren()[0].getchildren())
+			out[c.getparent().values()[0]] = items
+		return out
+
+def getTree(url):
+	site = urllib2.urlopen(url)
+	raw_text = site.read()
+	tree = html.fromstring(raw_text)
+	return tree
+
+print(main())

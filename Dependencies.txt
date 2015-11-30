@@ -3,5 +3,10 @@ python package lxml
 mysql 
 	- Ubuntu: "sudo apt-get install mysql"
 	- IOS: "brew install mysql"
-
+python package _mysql
+	- Ubuntu- 
+		"""
+		sudo apt-get install python-dev libmysqlclient-dev
+		pip install MySQL-python
+		"""
 
