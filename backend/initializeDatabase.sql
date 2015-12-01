@@ -9,16 +9,16 @@ CREATE TABLE IF NOT EXISTS `DiningHalls` (
 );
 
 CREATE TABLE IF NOT EXISTS `Hours` (
-  `ID` int(1) NOT NULL auto_increment,
-  `Day` varchar(10) DEFAULT NULL
+  `HallID` int(1) NOT NULL,
   `Open` varchar(6) DEFAULT NULL,
   `Close` varchar(6) DEFAULT NULL,
-  `HallID` int(1) NOT NULL
+  `Day` varchar(10) DEFAULT NULL,
+  `Meal` varchar(10) DEFAULT NULL
 );
 
 CREATE TABLE IF NOT EXISTS `Meal` (
   `ID` int(1) NOT NULL auto_increment,
-  `MealType` varchar(32) DEFAULT NULL 
+  `MealType` varchar(32) DEFAULT NULL, 
   `Item` varchar(64) NOT NULL,
   `HourID` int(1) NOT NULL,
   `HallID` int(1) NOT NULL
