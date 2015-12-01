@@ -3,7 +3,7 @@ CREATE DATABASE `FamishedBuffs` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_
 USE `FamishedBuffs`;
 
 CREATE TABLE IF NOT EXISTS `DiningHalls` (
-  `ID` int(1) NOT NULL auto_increment,
+  `ID` int(1) NOT NULL,
   `Hall` varchar(64) NOT NULL,
   `Station` varchar(64) DEFAULT NULL
 );
