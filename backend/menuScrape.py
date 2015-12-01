@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import urllib2
 from lxml import html
+import MySQLdb
 
 def hasDay(s):
   days = ['Saturday','Sunday','Monday','Tuesday','Wednesday','Thursday','Friday']
@@ -17,104 +18,44 @@ def hasTime(s):
   return False
 
 def mealTable(menu):
+  db = MySQLdb.connect(user='root',db='FamishedBuffs');
+  query = db.cursor()
   table = open('mealTable.sql', 'w')
   table.truncate()
   table.write('USE FamishedBuffs;\n')
-  table.write("INSERT INTO `Meal` (`HallID`, `Day`, `Item`, `MealType`) VALUES\n")
-  halls = ['Farrand and Libby', 'Darley and Sewall']
-  days = ['mon', 'tues', 'wed', 'thurs', 'fri', 'sat', 'sun']
-  rows = ['breakfastRow', 'lunchRow', 'dinnerRow']
-  for hall in halls:
-    for day in days:
-      for row in rows:
-        for item in menu[hall][day][row]:
-          item = item.replace('"',"'")
-          if hall == 'Farrand and Libby':
-            if day == 'mon':
-              if row == 'breakfastRow':
-                table.write("(18, 'Monday', \""+item[:-1]+"\", 'Breakfast'),\n")
-              elif row == 'lunchRow':
-                table.write("(18, 'Monday', \""+item[:-1]+"\", 'Lunch'),\n")
-              else:
-                table.write("(18, 'Monday', \""+item[:-1]+"\", 'Dinner'),\n")
-            elif day == 'tues':
-              if row == 'breakfastRow':
-                table.write("(18, 'Tuesday', \""+item[:-1]+"\", 'Breakfast'),\n")
-              elif row == 'lunchRow':
-                table.write("(18, 'Tuesday', \""+item[:-1]+"\", 'Lunch'),\n")
-              else:
-                table.write("(18, 'Tuesday', \""+item[:-1]+"\", 'Dinner'),\n")
-            elif day == 'wed':
-              if row == 'breakfastRow':
-                table.write("(18, 'Wednesday', \""+item[:-1]+"\", 'Breakfast'),\n")
-              elif row == 'lunchRow':
-                table.write("(18, 'Wednesday', \""+item[:-1]+"\", 'Lunch'),\n")
-              else:
-                table.write("(18, 'Wednesday', \""+item[:-1]+"\", 'Dinner'),\n")
-            elif day == 'thurs':
-              if row == 'breakfastRow':
-                table.write("(18, 'Thursday', \""+item[:-1]+"\", 'Breakfast'),\n")
-              elif row == 'lunchRow':
-                table.write("(18, 'Thursday', \""+item[:-1]+"\", 'Lunch'),\n")
-              else:
-                table.write("(18, 'Thursday', \""+item[:-1]+"\", 'Dinner'),\n")
-            else:
-              if row == 'breakfastRow':
-                table.write("(18, 'Friday', \""+item[:-1]+"\", 'Breakfast'),\n")
-              elif row == 'lunchRow':
-                table.write("(18, 'Friday', \""+item[:-1]+"\", 'Lunch'),\n")
-              else:
-                table.write("(18, 'Friday', \""+item[:-1]+"\", 'Dinner'),\n")
-          else:
-            if day == 'mon':
-              if row == 'breakfastRow':
-                table.write("(07, 'Monday', \""+item[:-1]+"\", 'Breakfast'),\n")
-              elif row == 'lunchRow':
-                table.write("(07, 'Monday', \""+item[:-1]+"\", 'Lunch'),\n")
-              else:
-                table.write("(07, 'Monday', \""+item[:-1]+"\", 'Dinner'),\n")
-            elif day == 'tues':
-              if row == 'breakfastRow':
-                table.write("(07, 'Tuesday', \""+item[:-1]+"\", 'Breakfast'),\n")
-              elif row == 'lunchRow':
-                table.write("(07, 'Tuesday', \""+item[:-1]+"\", 'Lunch'),\n")
-              else:
-                table.write("(07, 'Tuesday', \""+item[:-1]+"\", 'Dinner'),\n")
-            elif day == 'wed':
-              if row == 'breakfastRow':
-                table.write("(07, 'Wednesday', \""+item[:-1]+"\", 'Breakfast'),\n")
-              elif row == 'lunchRow':
-                table.write("(07, 'Wednesday', \""+item[:-1]+"\", 'Lunch'),\n")
-              else:
-                table.write("(07, 'Wednesday', \""+item[:-1]+"\", 'Dinner'),\n")
-            elif day == 'thurs':
-              if row == 'breakfastRow':
-                table.write("(07, 'Thursday', \""+item[:-1]+"\", 'Breakfast'),\n")
-              elif row == 'lunchRow':
-                table.write("(07, 'Thursday', \""+item[:-1]+"\", 'Lunch'),\n")
-              else:
-                table.write("(07, 'Thursday', \""+item[:-1]+"\", 'Dinner'),\n")
-            elif day == 'fri':
-              if row == 'breakfastRow':
-                table.write("(07, 'Friday', \""+item[:-1]+"\", 'Breakfast'),\n")
-              elif row == 'lunchRow':
-                table.write("(07, 'Friday', \""+item[:-1]+"\", 'Lunch'),\n")
-              else:
-                table.write("(07, 'Friday', \""+item[:-1]+"\", 'Dinner'),\n")
-            elif day == 'sat':
-              if row == 'breakfastRow':
-                table.write("(07, 'Saturday', \""+item[:-1]+"\", 'Breakfast'),\n")
-              elif row == 'lunchRow':
-                table.write("(07, 'Saturday', \""+item[:-1]+"\", 'Lunch'),\n")
-              else:
-                table.write("(07, 'Saturday', \""+item[:-1]+"\", 'Dinner'),\n")
-            else:
-              if row == 'breakfastRow':
-                table.write("(07, 'Sunday', \""+item[:-1]+"\", 'Breakfast'),\n")
-              elif row == 'lunchRow':
-                table.write("(07, 'Sunday', \""+item[:-1]+"\", 'Lunch'),\n")
-              else:
-                table.write("(07, 'Sunday', \""+item[:-1]+"\", 'Dinner'),\n")
+  table.write("INSERT INTO `Meal` (`HallID`, `Item`, `HourID`) VALUES\n")
+  dayDict = {
+  'mon':'Monday', 
+  'tues':'Tuesday', 
+  'wed':'Wednesday', 
+  'thurs':'Thursday', 
+  'fri':'Friday', 
+  'sat':'Saturday', 
+  'sun':'Sunday'
+  }
+  mealDict = {
+  'breakfastRow':'Breakfast',
+  'lunchRow':'Lunch',
+  'dinnerRow':'Dinner'
+  }
+  hallDict = {
+  'Farrand and Libby':'18', 
+  'Darley and Sewall':'07'
+  }
+  for hall in hallDict:
+    for day in dayDict:
+      for meal in mealDict:
+        idStr = "SELECT ID from Hours WHERE HALLID="+hallDict[hall]+" and Day='"+dayDict[day]+"' and Meal='"+mealDict[meal]+"'"
+        query.execute(idStr)
+        try:
+          result = query.fetchall()
+          hourid = str(result[0][0])
+          for item in menu[hall][day][meal]:
+            item = item.replace('"',"'")
+            cmd = "("+hallDict[hall]+", \""+item[:-1]+"\", "+hourid+"),\n"
+            table.write(cmd)
+        except:
+          pass
   size = table.tell()
   table.truncate(size-2)
   table.write(';')
