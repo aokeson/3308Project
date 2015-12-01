@@ -19,6 +19,6 @@ CREATE TABLE IF NOT EXISTS `Hours` (
 CREATE TABLE IF NOT EXISTS `Meal` (
   `HallID` int(1) NOT NULL,
   `Day` varchar(10) DEFAULT NULL,
-  `Item` varchar(64) NOT NULL,`
-  `MealType` varchar(32) DEFAULT NULL, 
+  `Item` varchar(64) NOT NULL,
+  `MealType` varchar(32) DEFAULT NULL 
 );
