@@ -1,35 +1,41 @@
 #!/usr/bin/env python
+import MySQLdb
 
 def genIDs(IDs):
-	#! @param IDs a dictionary with keys of an ID for each location and a vlue of the stations below
+	#! @param IDs a dictionary with keys of an ID for each location and a value of the stations below
 	out = ""
+	for key in IDs:
+		out += "\t\tvar toggle"+key+" = true;\n"
+	out += "\t\t$(document).ready(function() {\n"
 	for key in IDs:
 		out += genIDforLocation(key)
 		for val in IDs[key]:
-			out+=genIDforStation(key+val)
+			out+=genIDforStation(val)+'\n'
+	out += "});\n"
 	return out
 def genIDforLocation(s):
 	out =( 
-	"var toggle"+s+" = true;"+
-	"$(document).ready(function() {"+
-	'$("#'+s+'button").click(function() {'+
-	'$("#'+s+'").toggle(300);'+
-	'if (toggle'+s+') {'+
-	"$('#"+s+"icon').rotate({"
-	"angle: 0,"+
-	"animateTo:45"+
-	"});"+
-	"} else {"+
-	"$('#"+s+"icon').rotate({"+
-	"angle: 45,"+
-	"animateTo:0"+
-	"});}toggle"+s+" = !toggle"+s+";});"
+	'\t\t\t $("#'+s+'button").click(function() {\n'+
+	'\t\t\t\t $("#'+s+'").toggle(300);\n'+
+	'\t\t\t\t if (toggle'+s+') {\n'+
+	"\t\t\t\t\t $('#"+s+"icon').rotate({\n"
+	"\t\t\t\t\t\t angle: 0,\n"+
+	"\t\t\t\t\t\t animateTo:45\n"+
+	"\t\t\t\t\t });\n"+
+	"\t\t\t\t } else {\n"+
+	"\t\t\t\t\t $('#"+s+"icon').rotate({\n"+
+	"\t\t\t\t\t\t angle: 45,\n"+
+	"\t\t\t\t\t\t animateTo:0\n"+
+	"\t\t\t\t\t });\n"+
+	"\t\t\t\t }\n"+
+	"\t\t\t\t toggle"+s+" = !toggle"+s+";\n"+
+	"\t\t\t });\n"
 	)
 	return out
 def genIDforStation(s):
 	out = (
-	'$("#'+s+'").click(function() {'+
-	'$("#'+s+'").toggle(300);});'
+	'$("#'+s+'button").click(function() {'+
+	'$("#'+s+'").toggle(300);\n});\n'
 	)
 	return out
 def getHead(IDs):
@@ -44,7 +50,7 @@ def getHead(IDs):
 	<title>FOOD</title>
 	<link rel="stylesheet" type="text/css" href="boot.py">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="js/JQueryRotate.js"></script>
+	<script src="rotate.py"></script>
 	<script>
 			function getContent(name) {
 				console.log("getContent script called with '" + name + "'");
@@ -54,10 +60,9 @@ def getHead(IDs):
 			console.log("onload script called, calling getContent...");
 			window.onload = getContent("menus.txt");
 		</script>
-	<script>"""+
-	genIDs(IDs)
-	+"""
-			});
+	<script>\n"""+
+	genIDs(IDs)+
+	"""
 		</script>
 	<!-- Google font -->
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
@@ -88,19 +93,21 @@ def startBody():
 		</div>
 	"""
 	return out
-def buildLocation(TITLE,ID,vals,hasStation=False):
+def buildLocation(TITLE,vals,hasStation=False):
 	#! @param TITLE Title of Location (e.g. C4C)
 	#! @param ID ID of location for the buttons, must be like a variable name
 	#! @param vals if hasStation dict of Stations otherwise dict of meals and their items
 	#! @param hasStation only true for the C4C, where there are stations
 	out = ""
-	out += startLocation(ID,TITLE)
+	ID = makeVariableName(TITLE);
+	out += startLocation(ID,TITLE)+"\n"
 	if hasStation:
-		for statID,statTitle in vals:
-			out += startStation(statID,statTitle)
-			for meal in vals[(statID,statTitle)]:
-				out += genMeal(meal,vals[(statID,statTitle)][meal])
-			out += endStation();
+		for statTitle in vals:
+			statID = makeVariableName(statTitle)
+			out += startStation(statID,statTitle)+"\n"
+			for meal in vals[statTitle]:
+				out += genMeal(meal,vals[statTitle][meal])+"\n"
+			out += endStation()+"\n"
 	else:
 		for meal in vals:
 			out += genMeal(meal,vals[meal])
@@ -116,7 +123,7 @@ def startLocation(ID,TITLE):
 	"<a class=\"title\">"+
 	TITLE+
 	"</a>"+
-	"</h1>"+
+	"</h2>"+
 	"</div>"+
 	"<div class=\"startHidden\" id=\""+ID+"\">"
 	)
@@ -129,7 +136,7 @@ def startStation(ID,TITLE):
 	'<a class="title">'+
 	TITLE+
 	'</a>'+
-	'</h1>'+
+	'</h2>'+
 	'</div>'+
 	'<div class="startHidden" id="'+ID+'">'
 	)
@@ -149,7 +156,7 @@ def genMeal(Title,Items):
 	out += '</ul></div>'
 	return out
 def endLocation():
-	return "</div></div>"
+	return "</div></div>\n"
 def endBody():
 	out = '''
 	<div class="push"></div> <!-- also used for sticky footer -->
@@ -162,7 +169,95 @@ def endBody():
 <html>
 	'''
 	return out
+def makeVariableName(s):
+	return ''.join(c for c in s if c.isalnum())
+
+def GenerateSite():
+	# Set up Database
+	db = MySQLdb.connect(user='root',db='FamishedBuffs');
+	query = db.cursor()
+	
+	#collect one time info
+	query.execute("SELECT * from DiningHalls where Station is null")
+	Halls = query.fetchall()
+	query.execute("SELECT * from DiningHalls where Station is not null")
+	stations = query.fetchall()
+	
+	c4cStat = map(lambda x: makeVariableName(x[2]),stations)
+	#parse collected info
+	locations = map(lambda x: x[1],Halls)
+	hallids = map(lambda x:str(x[0]),Halls)
+	ids = map(makeVariableName,locations);
+	headIdDict = {}
+	for item in ids:
+		if item == "C4C":
+			headIdDict[item] = c4cStat
+		else:
+			headIdDict[item] = []
+	
+	page = getHead(headIdDict);
+	page+=startBody()
+	for (loc,hID) in zip(locations,hallids):
+		if loc == "C4C":
+			StationOut = {}
+			for ID,_,Station in stations:
+				query.execute("SELECT * from Hours where HallID="+str(ID))
+				meals = query.fetchall()
+				mealStrs = map(getMealStr,meals)
+				mealIds = map(lambda x:str(x[0]),meals)
+				mealsOut = {}
+				for mId,ms in zip(mealIds,mealStrs):
+					# this loop goes through the hours and gets the items
+					query.execute("SELECT Item from Meal where HourID="+mId)
+					mealsOut[ms]= map(lambda x:x[0],query.fetchall())
+				StationOut[Station]=mealsOut
+			page += buildLocation(loc,StationOut,True);
+		else:
+			query.execute("SELECT * from Hours where HallID="+str(hID))
+			meals = query.fetchall()
+			mealStrs = map(getMealStr,meals)
+			mealIds = map(lambda x:str(x[0]),meals)
+			mealsOut = {}
+			for mId,ms in zip(mealIds,mealStrs):
+				# this loop goes through the hours and gets the items
+				query.execute("SELECT Item from Meal where HourID="+mId)
+				mealsOut[ms]= map(lambda x:x[0],query.fetchall())
+			page += buildLocation(loc,mealsOut);
+	page += endBody()
+	return page
 
 def main():
 	#
-	print(getHead({"C4C":['Persian','Asian'],'Libby':[]}))
+	print 'Content-type: text/html'
+	print
+	print(GenerateSite())
+
+def getMealStr(x):
+	Day = x[4]
+	Meal = x[5]
+	OpenTime = x[2]
+	CloseTime = x[3]
+	if not OpenTime:
+		return Day + " => Closed"
+	elif not Meal:
+		return Day + " => "+ OpenTime + " to " + CloseTime
+	return Day + " " + Meal + " => "+ OpenTime + " to " + CloseTime
+main()
+	
+"""
+CREATE TABLE IF NOT EXISTS `Hours` (
+  `ID` int(1) PRIMARY KEY AUTO_INCREMENT,
+  `HallID` int(1) NOT NULL,
+  `Open` varchar(6) DEFAULT NULL,
+  `Close` varchar(6) DEFAULT NULL,
+  `Day` varchar(10) DEFAULT NULL,
+  `Meal` varchar(10) DEFAULT NULL
+);
+
+CREATE TABLE IF NOT EXISTS `Meal` (
+  `ID` int(1) PRIMARY KEY AUTO_INCREMENT,
+  `HallID` int(1) NOT NULL,
+  `Item` varchar(64) NOT NULL,
+  `HourID` int(1) NOT NULL
+);
+"""
