@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import MySQLdb
+from sqlpass import password,username
 
 def genIDs(IDs):
 	#! @param IDs a dictionary with keys of an ID for each location and a value of the stations below
@@ -174,7 +175,7 @@ def makeVariableName(s):
 
 def GenerateSite():
 	# Set up Database
-	db = MySQLdb.connect(user='root',db='FamishedBuffs');
+	db = MySQLdb.connect(user=username,db='FamishedBuffs',passwd=password);
 	query = db.cursor()
 	
 	#collect one time info
