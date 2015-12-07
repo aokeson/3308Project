@@ -6,37 +6,37 @@ def genIDs(IDs):
 	#! @param IDs a dictionary with keys of an ID for each location and a value of the stations below
 	out = ""
 	for key in IDs:
-		out += "\t\tvar toggle"+key+" = true;\n"
-	out += "\t\t$(document).ready(function() {\n"
+		out += "var toggle"+key+" = true;"
+	out += "$(document).ready(function() {"
 	for key in IDs:
 		out += genIDforLocation(key)
 		for val in IDs[key]:
-			out+=genIDforStation(val)+'\n'
-	out += "});\n"
+			out+=genIDforStation(val)+''
+	out += "});"
 	return out
 def genIDforLocation(s):
 	out =( 
-	'\t\t\t $("#'+s+'button").click(function() {\n'+
-	'\t\t\t\t $("#'+s+'").toggle(300);\n'+
-	'\t\t\t\t if (toggle'+s+') {\n'+
-	"\t\t\t\t\t $('#"+s+"icon').rotate({\n"
-	"\t\t\t\t\t\t angle: 0,\n"+
-	"\t\t\t\t\t\t animateTo:45\n"+
-	"\t\t\t\t\t });\n"+
-	"\t\t\t\t } else {\n"+
-	"\t\t\t\t\t $('#"+s+"icon').rotate({\n"+
-	"\t\t\t\t\t\t angle: 45,\n"+
-	"\t\t\t\t\t\t animateTo:0\n"+
-	"\t\t\t\t\t });\n"+
-	"\t\t\t\t }\n"+
-	"\t\t\t\t toggle"+s+" = !toggle"+s+";\n"+
-	"\t\t\t });\n"
+	' $("#'+s+'button").click(function() {'+
+	' $("#'+s+'").toggle(300);'+
+	' if (toggle'+s+') {'+
+	" $('#"+s+"icon').rotate({"
+	" angle: 0,"+
+	" animateTo:45"+
+	" });"+
+	" } else {"+
+	"$('#"+s+"icon').rotate({"+
+	"angle: 45,"+
+	"animateTo:0"+
+	"});"+
+	"}"+
+	"toggle"+s+" = !toggle"+s+";"+
+	"});"
 	)
 	return out
 def genIDforStation(s):
 	out = (
 	'$("#'+s+'button").click(function() {'+
-	'$("#'+s+'").toggle(300);\n});\n'
+	'$("#'+s+'").toggle(300);\n});'
 	)
 	return out
 def getHead(IDs):
@@ -84,13 +84,8 @@ def startBody():
 		<div class="wrapper">
 		
 		<h1 class="title">What's on the Buff(et)?</h1>
-		<p id="taglineContent" class="tagline">Because chicken nuggets won't find themselves.</p>
 		<div class="selector">
-		  <ul class="nav">
-				<li class="nav">today</li>
-				<li class="nav">tomorrow</li>
-				<li class="nav">wednesday</li>
-			</ul>
+		<p id="taglineContent" class="tagline">Because chicken nuggets won't find themselves.</p>
 		</div>
 	"""
 	return out
@@ -101,14 +96,14 @@ def buildLocation(TITLE,vals,hasStation=False):
 	#! @param hasStation only true for the C4C, where there are stations
 	out = ""
 	ID = makeVariableName(TITLE);
-	out += startLocation(ID,TITLE)+"\n"
+	out += startLocation(ID,TITLE)
 	if hasStation:
 		for statTitle in vals:
 			statID = makeVariableName(statTitle)
-			out += startStation(statID,statTitle)+"\n"
+			out += startStation(statID,statTitle)
 			for meal in vals[statTitle]:
-				out += genMeal(meal,vals[statTitle][meal])+"\n"
-			out += endStation()+"\n"
+				out += genMeal(meal,vals[statTitle][meal])
+			out += endStation()
 	else:
 		for meal in vals:
 			out += genMeal(meal,vals[meal])
@@ -163,7 +158,11 @@ def endBody():
 	<div class="push"></div> <!-- also used for sticky footer -->
 	</div> <!-- wrapper -->
 		<div class="footer">
-			footer content!<br>copyright and shit I dunno<br>we made this
+			Discalimer: All information is only as good as the information provided by the University of Colorado. 
+			<br>
+			Garbage in, Garbage out.
+			<br>
+			&copy& We made this
 		</div>
 		
 	</body>
