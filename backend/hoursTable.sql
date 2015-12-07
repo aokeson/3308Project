@@ -1,3 +1,5 @@
+-- Hard code dining hall hours into Hours table
+
 USE FamishedBuffs;
 INSERT INTO `Hours` (`HallID`, `Open`, `Close`, `Day`, `Meal`) VALUES
 (01, '10:30am', '7:00pm', 'Monday', NULL),

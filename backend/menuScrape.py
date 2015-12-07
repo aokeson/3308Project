@@ -22,6 +22,7 @@ def mealTable(menu):
   query = db.cursor()
   table = open('mealTable.sql', 'w')
   table.truncate()
+  table.write('-- Add Scraped menu items from menuScrape.py to Meal table\n\n')
   table.write('USE FamishedBuffs;\n')
   table.write("INSERT INTO `Meal` (`HallID`, `Item`, `HourID`) VALUES\n")
   dayDict = {

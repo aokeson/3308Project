@@ -1,3 +1,5 @@
+-- Hard code Grab and Go Items into Meal table
+
 USE FamishedBuffs;
 INSERT INTO `Meal` (`HallID`, `Item`, `HourID`) VALUES
 (01, 'Italian Sausage Pizza', 1),
