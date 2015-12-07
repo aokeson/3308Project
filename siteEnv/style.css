@@ -27,6 +27,8 @@ div {
 div.selector { /* div for date/location selectors */
 	background-color: #CFB87C;
 
+	color: black;
+
 	/* don't make the bar take up the entire width */
 	width: 40%;
 	margin: 0 auto;
@@ -188,4 +190,3 @@ Sticky Footer by Ryan Fait
 http://ryanfait.com/
 
 */
-
