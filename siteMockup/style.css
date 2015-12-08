@@ -27,6 +27,8 @@ div {
 div.selector { /* div for date/location selectors */
 	background-color: #CFB87C;
 
+	color: black;
+
 	/* don't make the bar take up the entire width */
 	width: 40%;
 	margin: 0 auto;
@@ -134,14 +136,14 @@ li.menuitem {
 img {
 
 }
-img.expandicon_location {
+img.expandicon_location { /* the rotating button for cards */
 	position: relative;
 	float: left;
 	height: 1.2cm;
 	margin-top: .12cm;
 	right: .6cm;
 }
-img.expandicon_station {
+img.expandicon_station { /* rotating button for stations, unused */
 	position: relative;
 	float: left;
 	height: .8cm;

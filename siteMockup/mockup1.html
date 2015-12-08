@@ -25,11 +25,13 @@
 					$("#collapsible1").toggle(300);
 					if (toggle1) {
 						$('#collapseicon1').rotate({
+							  // from 0 deg to 45
 						      angle: 0,
 						      animateTo:45
 			      		});
 					} else {
 						$('#collapseicon1').rotate({
+							  // and vice versa
 						      angle: 45,
 						      animateTo:0
 			      		});
@@ -38,6 +40,7 @@
 				});
 
 				// on station toggle
+				// no buttons for stations
 				$("#collapsebutton2").click(function() {
 					$("#collapsible2").toggle(300);
 				});
