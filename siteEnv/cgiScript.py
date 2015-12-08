@@ -1,4 +1,8 @@
 #!/usr/bin/env python
+# File: cgiscript.py
+# I made this simply so that I could silence the errors when pressing ctrl-c
+# 
+
  
 import BaseHTTPServer
 import CGIHTTPServer

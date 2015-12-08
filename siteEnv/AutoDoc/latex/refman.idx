@@ -1,0 +1,56 @@
+\indexentry{boot@{boot}|hyperpage}{5}
+\indexentry{cgi\discretionary {-}{}{}Script@{cgi\discretionary {-}{}{}Script}|hyperpage}{5}
+\indexentry{cgi\discretionary {-}{}{}Script@{cgi\discretionary {-}{}{}Script}!handler@{handler}|hyperpage}{5}
+\indexentry{handler@{handler}!cgiScript@{cgi\discretionary {-}{}{}Script}|hyperpage}{5}
+\indexentry{cgi\discretionary {-}{}{}Script@{cgi\discretionary {-}{}{}Script}!httpd@{httpd}|hyperpage}{5}
+\indexentry{httpd@{httpd}!cgiScript@{cgi\discretionary {-}{}{}Script}|hyperpage}{5}
+\indexentry{cgi\discretionary {-}{}{}Script@{cgi\discretionary {-}{}{}Script}!server@{server}|hyperpage}{5}
+\indexentry{server@{server}!cgiScript@{cgi\discretionary {-}{}{}Script}|hyperpage}{5}
+\indexentry{cgi\discretionary {-}{}{}Script@{cgi\discretionary {-}{}{}Script}!server\discretionary {-}{}{}\_\discretionary {-}{}{}address@{server\discretionary {-}{}{}\_\discretionary {-}{}{}address}|hyperpage}{5}
+\indexentry{server\discretionary {-}{}{}\_\discretionary {-}{}{}address@{server\discretionary {-}{}{}\_\discretionary {-}{}{}address}!cgiScript@{cgi\discretionary {-}{}{}Script}|hyperpage}{5}
+\indexentry{code@{code}|hyperpage}{5}
+\indexentry{code@{code}!build\discretionary {-}{}{}Location@{build\discretionary {-}{}{}Location}|hyperpage}{6}
+\indexentry{build\discretionary {-}{}{}Location@{build\discretionary {-}{}{}Location}!code@{code}|hyperpage}{6}
+\indexentry{code@{code}!end\discretionary {-}{}{}Body@{end\discretionary {-}{}{}Body}|hyperpage}{6}
+\indexentry{end\discretionary {-}{}{}Body@{end\discretionary {-}{}{}Body}!code@{code}|hyperpage}{6}
+\indexentry{code@{code}!end\discretionary {-}{}{}Location@{end\discretionary {-}{}{}Location}|hyperpage}{6}
+\indexentry{end\discretionary {-}{}{}Location@{end\discretionary {-}{}{}Location}!code@{code}|hyperpage}{6}
+\indexentry{code@{code}!end\discretionary {-}{}{}Station@{end\discretionary {-}{}{}Station}|hyperpage}{6}
+\indexentry{end\discretionary {-}{}{}Station@{end\discretionary {-}{}{}Station}!code@{code}|hyperpage}{6}
+\indexentry{code@{code}!Generate\discretionary {-}{}{}Site@{Generate\discretionary {-}{}{}Site}|hyperpage}{6}
+\indexentry{Generate\discretionary {-}{}{}Site@{Generate\discretionary {-}{}{}Site}!code@{code}|hyperpage}{6}
+\indexentry{code@{code}!gen\discretionary {-}{}{}I\discretionary {-}{}{}Dfor\discretionary {-}{}{}Location@{gen\discretionary {-}{}{}I\discretionary {-}{}{}Dfor\discretionary {-}{}{}Location}|hyperpage}{6}
+\indexentry{gen\discretionary {-}{}{}I\discretionary {-}{}{}Dfor\discretionary {-}{}{}Location@{gen\discretionary {-}{}{}I\discretionary {-}{}{}Dfor\discretionary {-}{}{}Location}!code@{code}|hyperpage}{6}
+\indexentry{code@{code}!gen\discretionary {-}{}{}I\discretionary {-}{}{}Dfor\discretionary {-}{}{}Station@{gen\discretionary {-}{}{}I\discretionary {-}{}{}Dfor\discretionary {-}{}{}Station}|hyperpage}{7}
+\indexentry{gen\discretionary {-}{}{}I\discretionary {-}{}{}Dfor\discretionary {-}{}{}Station@{gen\discretionary {-}{}{}I\discretionary {-}{}{}Dfor\discretionary {-}{}{}Station}!code@{code}|hyperpage}{7}
+\indexentry{code@{code}!gen\discretionary {-}{}{}I\discretionary {-}{}{}Ds@{gen\discretionary {-}{}{}I\discretionary {-}{}{}Ds}|hyperpage}{7}
+\indexentry{gen\discretionary {-}{}{}I\discretionary {-}{}{}Ds@{gen\discretionary {-}{}{}I\discretionary {-}{}{}Ds}!code@{code}|hyperpage}{7}
+\indexentry{code@{code}!gen\discretionary {-}{}{}Meal@{gen\discretionary {-}{}{}Meal}|hyperpage}{7}
+\indexentry{gen\discretionary {-}{}{}Meal@{gen\discretionary {-}{}{}Meal}!code@{code}|hyperpage}{7}
+\indexentry{code@{code}!get\discretionary {-}{}{}Head@{get\discretionary {-}{}{}Head}|hyperpage}{7}
+\indexentry{get\discretionary {-}{}{}Head@{get\discretionary {-}{}{}Head}!code@{code}|hyperpage}{7}
+\indexentry{code@{code}!get\discretionary {-}{}{}Meal\discretionary {-}{}{}Str@{get\discretionary {-}{}{}Meal\discretionary {-}{}{}Str}|hyperpage}{7}
+\indexentry{get\discretionary {-}{}{}Meal\discretionary {-}{}{}Str@{get\discretionary {-}{}{}Meal\discretionary {-}{}{}Str}!code@{code}|hyperpage}{7}
+\indexentry{code@{code}!main@{main}|hyperpage}{7}
+\indexentry{main@{main}!code@{code}|hyperpage}{7}
+\indexentry{code@{code}!make\discretionary {-}{}{}Variable\discretionary {-}{}{}Name@{make\discretionary {-}{}{}Variable\discretionary {-}{}{}Name}|hyperpage}{7}
+\indexentry{make\discretionary {-}{}{}Variable\discretionary {-}{}{}Name@{make\discretionary {-}{}{}Variable\discretionary {-}{}{}Name}!code@{code}|hyperpage}{7}
+\indexentry{code@{code}!start\discretionary {-}{}{}Body@{start\discretionary {-}{}{}Body}|hyperpage}{8}
+\indexentry{start\discretionary {-}{}{}Body@{start\discretionary {-}{}{}Body}!code@{code}|hyperpage}{8}
+\indexentry{code@{code}!start\discretionary {-}{}{}Location@{start\discretionary {-}{}{}Location}|hyperpage}{8}
+\indexentry{start\discretionary {-}{}{}Location@{start\discretionary {-}{}{}Location}!code@{code}|hyperpage}{8}
+\indexentry{code@{code}!start\discretionary {-}{}{}Station@{start\discretionary {-}{}{}Station}|hyperpage}{8}
+\indexentry{start\discretionary {-}{}{}Station@{start\discretionary {-}{}{}Station}!code@{code}|hyperpage}{8}
+\indexentry{rotate@{rotate}|hyperpage}{8}
+\indexentry{sqlpass@{sqlpass}|hyperpage}{8}
+\indexentry{sqlpass@{sqlpass}!password@{password}|hyperpage}{8}
+\indexentry{password@{password}!sqlpass@{sqlpass}|hyperpage}{8}
+\indexentry{sqlpass@{sqlpass}!username@{username}|hyperpage}{8}
+\indexentry{username@{username}!sqlpass@{sqlpass}|hyperpage}{8}
+\indexentry{style@{style}|hyperpage}{8}
+\indexentry{boot.\discretionary {-}{}{}py@{boot.\discretionary {-}{}{}py}|hyperpage}{9}
+\indexentry{cgi\discretionary {-}{}{}Script.\discretionary {-}{}{}py@{cgi\discretionary {-}{}{}Script.\discretionary {-}{}{}py}|hyperpage}{9}
+\indexentry{code.\discretionary {-}{}{}py@{code.\discretionary {-}{}{}py}|hyperpage}{9}
+\indexentry{rotate.\discretionary {-}{}{}py@{rotate.\discretionary {-}{}{}py}|hyperpage}{10}
+\indexentry{sqlpass.\discretionary {-}{}{}py@{sqlpass.\discretionary {-}{}{}py}|hyperpage}{10}
+\indexentry{style.\discretionary {-}{}{}py@{style.\discretionary {-}{}{}py}|hyperpage}{10}

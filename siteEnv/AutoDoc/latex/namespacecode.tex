@@ -1,0 +1,262 @@
+\hypertarget{namespacecode}{\section{code Namespace Reference}
+\label{namespacecode}\index{code@{code}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacecode_a4c04c9f20e1c3ab4e0f9557f50c9fb54}{gen\-I\-Ds}
+\begin{DoxyCompactList}\small\item\em Creates the I\-D strings for the divs in the javascript. \end{DoxyCompactList}\item 
+def \hyperlink{namespacecode_a7f1e3c4624b7277c01c67c1cd640c728}{gen\-I\-Dfor\-Location}
+\begin{DoxyCompactList}\small\item\em Generates the slightly longer javascript ids for locations. \end{DoxyCompactList}\item 
+def \hyperlink{namespacecode_aaf2f49c28ee8d8b0577fb9ce44ccf1b4}{gen\-I\-Dfor\-Station}
+\begin{DoxyCompactList}\small\item\em Generates the I\-D for stations that dont' need as much as locations. \end{DoxyCompactList}\item 
+def \hyperlink{namespacecode_a346295107a9e0d66b8fb986b0985ff13}{get\-Head}
+\begin{DoxyCompactList}\small\item\em Generates head of html file. \end{DoxyCompactList}\item 
+def \hyperlink{namespacecode_a3537761456739767d9cab1643175b79d}{start\-Body}
+\begin{DoxyCompactList}\small\item\em Returns overhead for the body of the html. \end{DoxyCompactList}\item 
+def \hyperlink{namespacecode_a310a9c157a8d3f7a97d4f8af3e42be02}{build\-Location}
+\begin{DoxyCompactList}\small\item\em Builds html for a specific location. \end{DoxyCompactList}\item 
+def \hyperlink{namespacecode_a16f138feb62f5c14599aabc9cc3cb7e4}{start\-Location}
+\begin{DoxyCompactList}\small\item\em Overhead html for a location. \end{DoxyCompactList}\item 
+def \hyperlink{namespacecode_acbccb2d9d133e86519cb215b7f9d232b}{start\-Station}
+\begin{DoxyCompactList}\small\item\em Starts the html for a specific station. \end{DoxyCompactList}\item 
+def \hyperlink{namespacecode_a746b3c361d20cb299f2d23f97ee10fb0}{end\-Station}
+\begin{DoxyCompactList}\small\item\em Balances the divs that were opened for each station. \end{DoxyCompactList}\item 
+def \hyperlink{namespacecode_a2c52dc22f18c267737cf02d2c7a993fd}{gen\-Meal}
+\begin{DoxyCompactList}\small\item\em Generates a meal card. \end{DoxyCompactList}\item 
+def \hyperlink{namespacecode_af22e585220154cf6f605f0ef7ba37300}{end\-Location}
+\item 
+def \hyperlink{namespacecode_a135931d367dc114c5040371519203dee}{end\-Body}
+\item 
+def \hyperlink{namespacecode_aade8af14ce2bb501d6434723ac2a40dd}{make\-Variable\-Name}
+\begin{DoxyCompactList}\small\item\em Removes all non alpha numeric characters. \end{DoxyCompactList}\item 
+def \hyperlink{namespacecode_a7b5ff74ae6ecd9e7896ab37d2f86d72d}{Generate\-Site}
+\begin{DoxyCompactList}\small\item\em Pulls the whole thing together. \end{DoxyCompactList}\item 
+def \hyperlink{namespacecode_abca6883605857cac25d75925e02e08d2}{main}
+\begin{DoxyCompactList}\small\item\em Really just calls Generate\-Site. \end{DoxyCompactList}\item 
+def \hyperlink{namespacecode_ab353288cd73caf7523ee53cf9928bd12}{get\-Meal\-Str}
+\begin{DoxyCompactList}\small\item\em Parses sql database into a nice string for meals. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{namespacecode_a310a9c157a8d3f7a97d4f8af3e42be02}{\index{code@{code}!build\-Location@{build\-Location}}
+\index{build\-Location@{build\-Location}!code@{code}}
+\subsubsection[{build\-Location}]{\setlength{\rightskip}{0pt plus 5cm}def code.\-build\-Location (
+\begin{DoxyParamCaption}
+\item[{}]{T\-I\-T\-L\-E, }
+\item[{}]{vals, }
+\item[{}]{has\-Station = {\ttfamily False}}
+\end{DoxyParamCaption}
+)}}\label{namespacecode_a310a9c157a8d3f7a97d4f8af3e42be02}
+
+
+Builds html for a specific location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T\-I\-T\-L\-E} & Title of Location (e.\-g. C4\-C) \\
+\hline
+{\em vals} & if has\-Station dict of Stations otherwise dict of meals and their items \\
+\hline
+{\em has\-Station} & only true for the C4\-C, where there are stations \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespacecode_a135931d367dc114c5040371519203dee}{\index{code@{code}!end\-Body@{end\-Body}}
+\index{end\-Body@{end\-Body}!code@{code}}
+\subsubsection[{end\-Body}]{\setlength{\rightskip}{0pt plus 5cm}def code.\-end\-Body (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{namespacecode_a135931d367dc114c5040371519203dee}
+\hypertarget{namespacecode_af22e585220154cf6f605f0ef7ba37300}{\index{code@{code}!end\-Location@{end\-Location}}
+\index{end\-Location@{end\-Location}!code@{code}}
+\subsubsection[{end\-Location}]{\setlength{\rightskip}{0pt plus 5cm}def code.\-end\-Location (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{namespacecode_af22e585220154cf6f605f0ef7ba37300}
+\hypertarget{namespacecode_a746b3c361d20cb299f2d23f97ee10fb0}{\index{code@{code}!end\-Station@{end\-Station}}
+\index{end\-Station@{end\-Station}!code@{code}}
+\subsubsection[{end\-Station}]{\setlength{\rightskip}{0pt plus 5cm}def code.\-end\-Station (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{namespacecode_a746b3c361d20cb299f2d23f97ee10fb0}
+
+
+Balances the divs that were opened for each station. 
+
+\hypertarget{namespacecode_a7b5ff74ae6ecd9e7896ab37d2f86d72d}{\index{code@{code}!Generate\-Site@{Generate\-Site}}
+\index{Generate\-Site@{Generate\-Site}!code@{code}}
+\subsubsection[{Generate\-Site}]{\setlength{\rightskip}{0pt plus 5cm}def code.\-Generate\-Site (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{namespacecode_a7b5ff74ae6ecd9e7896ab37d2f86d72d}
+
+
+Pulls the whole thing together. 
+
+This is where the real work is done. \hypertarget{namespacecode_a7f1e3c4624b7277c01c67c1cd640c728}{\index{code@{code}!gen\-I\-Dfor\-Location@{gen\-I\-Dfor\-Location}}
+\index{gen\-I\-Dfor\-Location@{gen\-I\-Dfor\-Location}!code@{code}}
+\subsubsection[{gen\-I\-Dfor\-Location}]{\setlength{\rightskip}{0pt plus 5cm}def code.\-gen\-I\-Dfor\-Location (
+\begin{DoxyParamCaption}
+\item[{}]{s}
+\end{DoxyParamCaption}
+)}}\label{namespacecode_a7f1e3c4624b7277c01c67c1cd640c728}
+
+
+Generates the slightly longer javascript ids for locations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & variable name like string to identify the station \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespacecode_aaf2f49c28ee8d8b0577fb9ce44ccf1b4}{\index{code@{code}!gen\-I\-Dfor\-Station@{gen\-I\-Dfor\-Station}}
+\index{gen\-I\-Dfor\-Station@{gen\-I\-Dfor\-Station}!code@{code}}
+\subsubsection[{gen\-I\-Dfor\-Station}]{\setlength{\rightskip}{0pt plus 5cm}def code.\-gen\-I\-Dfor\-Station (
+\begin{DoxyParamCaption}
+\item[{}]{s}
+\end{DoxyParamCaption}
+)}}\label{namespacecode_aaf2f49c28ee8d8b0577fb9ce44ccf1b4}
+
+
+Generates the I\-D for stations that dont' need as much as locations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & string of id for station \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespacecode_a4c04c9f20e1c3ab4e0f9557f50c9fb54}{\index{code@{code}!gen\-I\-Ds@{gen\-I\-Ds}}
+\index{gen\-I\-Ds@{gen\-I\-Ds}!code@{code}}
+\subsubsection[{gen\-I\-Ds}]{\setlength{\rightskip}{0pt plus 5cm}def code.\-gen\-I\-Ds (
+\begin{DoxyParamCaption}
+\item[{}]{I\-Ds}
+\end{DoxyParamCaption}
+)}}\label{namespacecode_a4c04c9f20e1c3ab4e0f9557f50c9fb54}
+
+
+Creates the I\-D strings for the divs in the javascript. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em I\-Ds} & a dictionary with keys of an I\-D for each location and a value of the stations below \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespacecode_a2c52dc22f18c267737cf02d2c7a993fd}{\index{code@{code}!gen\-Meal@{gen\-Meal}}
+\index{gen\-Meal@{gen\-Meal}!code@{code}}
+\subsubsection[{gen\-Meal}]{\setlength{\rightskip}{0pt plus 5cm}def code.\-gen\-Meal (
+\begin{DoxyParamCaption}
+\item[{}]{Title, }
+\item[{}]{Items}
+\end{DoxyParamCaption}
+)}}\label{namespacecode_a2c52dc22f18c267737cf02d2c7a993fd}
+
+
+Generates a meal card. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Title} & Title of meal (e.\-g. Breakfast) \\
+\hline
+{\em Items} & list of items available at that meal \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespacecode_a346295107a9e0d66b8fb986b0985ff13}{\index{code@{code}!get\-Head@{get\-Head}}
+\index{get\-Head@{get\-Head}!code@{code}}
+\subsubsection[{get\-Head}]{\setlength{\rightskip}{0pt plus 5cm}def code.\-get\-Head (
+\begin{DoxyParamCaption}
+\item[{}]{I\-Ds}
+\end{DoxyParamCaption}
+)}}\label{namespacecode_a346295107a9e0d66b8fb986b0985ff13}
+
+
+Generates head of html file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em I\-Ds} & a dictionary with keys of an I\-D for each location and a value of the stations below \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespacecode_ab353288cd73caf7523ee53cf9928bd12}{\index{code@{code}!get\-Meal\-Str@{get\-Meal\-Str}}
+\index{get\-Meal\-Str@{get\-Meal\-Str}!code@{code}}
+\subsubsection[{get\-Meal\-Str}]{\setlength{\rightskip}{0pt plus 5cm}def code.\-get\-Meal\-Str (
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)}}\label{namespacecode_ab353288cd73caf7523ee53cf9928bd12}
+
+
+Parses sql database into a nice string for meals. 
+
+\hypertarget{namespacecode_abca6883605857cac25d75925e02e08d2}{\index{code@{code}!main@{main}}
+\index{main@{main}!code@{code}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}def code.\-main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{namespacecode_abca6883605857cac25d75925e02e08d2}
+
+
+Really just calls Generate\-Site. 
+
+\hypertarget{namespacecode_aade8af14ce2bb501d6434723ac2a40dd}{\index{code@{code}!make\-Variable\-Name@{make\-Variable\-Name}}
+\index{make\-Variable\-Name@{make\-Variable\-Name}!code@{code}}
+\subsubsection[{make\-Variable\-Name}]{\setlength{\rightskip}{0pt plus 5cm}def code.\-make\-Variable\-Name (
+\begin{DoxyParamCaption}
+\item[{}]{s}
+\end{DoxyParamCaption}
+)}}\label{namespacecode_aade8af14ce2bb501d6434723ac2a40dd}
+
+
+Removes all non alpha numeric characters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & string identifier \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespacecode_a3537761456739767d9cab1643175b79d}{\index{code@{code}!start\-Body@{start\-Body}}
+\index{start\-Body@{start\-Body}!code@{code}}
+\subsubsection[{start\-Body}]{\setlength{\rightskip}{0pt plus 5cm}def code.\-start\-Body (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{namespacecode_a3537761456739767d9cab1643175b79d}
+
+
+Returns overhead for the body of the html. 
+
+\hypertarget{namespacecode_a16f138feb62f5c14599aabc9cc3cb7e4}{\index{code@{code}!start\-Location@{start\-Location}}
+\index{start\-Location@{start\-Location}!code@{code}}
+\subsubsection[{start\-Location}]{\setlength{\rightskip}{0pt plus 5cm}def code.\-start\-Location (
+\begin{DoxyParamCaption}
+\item[{}]{I\-D, }
+\item[{}]{T\-I\-T\-L\-E}
+\end{DoxyParamCaption}
+)}}\label{namespacecode_a16f138feb62f5c14599aabc9cc3cb7e4}
+
+
+Overhead html for a location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em I\-D} & a variable name string for location for javascript \\
+\hline
+{\em T\-I\-T\-L\-E} & What the page displays as the title for the location \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespacecode_acbccb2d9d133e86519cb215b7f9d232b}{\index{code@{code}!start\-Station@{start\-Station}}
+\index{start\-Station@{start\-Station}!code@{code}}
+\subsubsection[{start\-Station}]{\setlength{\rightskip}{0pt plus 5cm}def code.\-start\-Station (
+\begin{DoxyParamCaption}
+\item[{}]{I\-D, }
+\item[{}]{T\-I\-T\-L\-E}
+\end{DoxyParamCaption}
+)}}\label{namespacecode_acbccb2d9d133e86519cb215b7f9d232b}
+
+
+Starts the html for a specific station. 
+

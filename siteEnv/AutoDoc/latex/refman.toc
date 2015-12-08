@@ -1,0 +1,44 @@
+\contentsline {chapter}{\numberline {1}Namespace Index}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Namespace List}{1}{section.1.1}
+\contentsline {chapter}{\numberline {2}File Index}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}File List}{3}{section.2.1}
+\contentsline {chapter}{\numberline {3}Namespace Documentation}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}boot Namespace Reference}{5}{section.3.1}
+\contentsline {section}{\numberline {3.2}cgi\discretionary {-}{}{}Script Namespace Reference}{5}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Variable Documentation}{5}{subsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.1.1}handler}{5}{subsubsection.3.2.1.1}
+\contentsline {subsubsection}{\numberline {3.2.1.2}httpd}{5}{subsubsection.3.2.1.2}
+\contentsline {subsubsection}{\numberline {3.2.1.3}server}{5}{subsubsection.3.2.1.3}
+\contentsline {subsubsection}{\numberline {3.2.1.4}server\discretionary {-}{}{}\_\discretionary {-}{}{}address}{5}{subsubsection.3.2.1.4}
+\contentsline {section}{\numberline {3.3}code Namespace Reference}{5}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Function Documentation}{6}{subsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.1.1}build\discretionary {-}{}{}Location}{6}{subsubsection.3.3.1.1}
+\contentsline {subsubsection}{\numberline {3.3.1.2}end\discretionary {-}{}{}Body}{6}{subsubsection.3.3.1.2}
+\contentsline {subsubsection}{\numberline {3.3.1.3}end\discretionary {-}{}{}Location}{6}{subsubsection.3.3.1.3}
+\contentsline {subsubsection}{\numberline {3.3.1.4}end\discretionary {-}{}{}Station}{6}{subsubsection.3.3.1.4}
+\contentsline {subsubsection}{\numberline {3.3.1.5}Generate\discretionary {-}{}{}Site}{6}{subsubsection.3.3.1.5}
+\contentsline {subsubsection}{\numberline {3.3.1.6}gen\discretionary {-}{}{}I\discretionary {-}{}{}Dfor\discretionary {-}{}{}Location}{6}{subsubsection.3.3.1.6}
+\contentsline {subsubsection}{\numberline {3.3.1.7}gen\discretionary {-}{}{}I\discretionary {-}{}{}Dfor\discretionary {-}{}{}Station}{7}{subsubsection.3.3.1.7}
+\contentsline {subsubsection}{\numberline {3.3.1.8}gen\discretionary {-}{}{}I\discretionary {-}{}{}Ds}{7}{subsubsection.3.3.1.8}
+\contentsline {subsubsection}{\numberline {3.3.1.9}gen\discretionary {-}{}{}Meal}{7}{subsubsection.3.3.1.9}
+\contentsline {subsubsection}{\numberline {3.3.1.10}get\discretionary {-}{}{}Head}{7}{subsubsection.3.3.1.10}
+\contentsline {subsubsection}{\numberline {3.3.1.11}get\discretionary {-}{}{}Meal\discretionary {-}{}{}Str}{7}{subsubsection.3.3.1.11}
+\contentsline {subsubsection}{\numberline {3.3.1.12}main}{7}{subsubsection.3.3.1.12}
+\contentsline {subsubsection}{\numberline {3.3.1.13}make\discretionary {-}{}{}Variable\discretionary {-}{}{}Name}{7}{subsubsection.3.3.1.13}
+\contentsline {subsubsection}{\numberline {3.3.1.14}start\discretionary {-}{}{}Body}{8}{subsubsection.3.3.1.14}
+\contentsline {subsubsection}{\numberline {3.3.1.15}start\discretionary {-}{}{}Location}{8}{subsubsection.3.3.1.15}
+\contentsline {subsubsection}{\numberline {3.3.1.16}start\discretionary {-}{}{}Station}{8}{subsubsection.3.3.1.16}
+\contentsline {section}{\numberline {3.4}rotate Namespace Reference}{8}{section.3.4}
+\contentsline {section}{\numberline {3.5}sqlpass Namespace Reference}{8}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Variable Documentation}{8}{subsection.3.5.1}
+\contentsline {subsubsection}{\numberline {3.5.1.1}password}{8}{subsubsection.3.5.1.1}
+\contentsline {subsubsection}{\numberline {3.5.1.2}username}{8}{subsubsection.3.5.1.2}
+\contentsline {section}{\numberline {3.6}style Namespace Reference}{8}{section.3.6}
+\contentsline {chapter}{\numberline {4}File Documentation}{9}{chapter.4}
+\contentsline {section}{\numberline {4.1}boot.\discretionary {-}{}{}py File Reference}{9}{section.4.1}
+\contentsline {section}{\numberline {4.2}cgi\discretionary {-}{}{}Script.\discretionary {-}{}{}py File Reference}{9}{section.4.2}
+\contentsline {section}{\numberline {4.3}code.\discretionary {-}{}{}py File Reference}{9}{section.4.3}
+\contentsline {section}{\numberline {4.4}rotate.\discretionary {-}{}{}py File Reference}{10}{section.4.4}
+\contentsline {section}{\numberline {4.5}sqlpass.\discretionary {-}{}{}py File Reference}{10}{section.4.5}
+\contentsline {section}{\numberline {4.6}style.\discretionary {-}{}{}py File Reference}{10}{section.4.6}
+\contentsline {chapter}{Index}{11}{section*.14}

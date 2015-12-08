@@ -1,9 +1,16 @@
 #!/usr/bin/env python
+# File: code.py
+# Generates html for website
+#
+"""@package code.py
+Builds webpage from sql db when called
+"""
 import MySQLdb
 from sqlpass import password,username
 
+## Creates the ID strings for the divs in the javascript
+# @param IDs a dictionary with keys of an ID for each location and a value of the stations below
 def genIDs(IDs):
-	#! @param IDs a dictionary with keys of an ID for each location and a value of the stations below
 	out = ""
 	for key in IDs:
 		out += "var toggle"+key+" = true;"
@@ -14,6 +21,8 @@ def genIDs(IDs):
 			out+=genIDforStation(val)+''
 	out += "});"
 	return out
+## Generates the slightly longer javascript ids for locations
+# @param s variable name like string to identify the station
 def genIDforLocation(s):
 	out =( 
 	' $("#'+s+'button").click(function() {'+
@@ -33,12 +42,19 @@ def genIDforLocation(s):
 	"});"
 	)
 	return out
+## Generates the ID for stations that dont' need as much as locations
+# @param s string of id for station
 def genIDforStation(s):
 	out = (
 	'$("#'+s+'button").click(function() {'+
 	'$("#'+s+'").toggle(300);\n});'
 	)
 	return out
+
+## Generates head of html file
+#
+# @param IDs a dictionary with keys of an ID for each location and a value of the stations below
+# 
 def getHead(IDs):
 	head = (
 	"""
@@ -77,6 +93,10 @@ def getHead(IDs):
 	</head>"""
 	)
 	return head
+
+##
+# Returns overhead for the body of the html
+# 
 def startBody():
 	out = """
 	<body>
@@ -89,11 +109,13 @@ def startBody():
 		</div>
 	"""
 	return out
+##
+# Builds html for a specific location
+# @param TITLE Title of Location (e.g. C4C)
+# @param vals if hasStation dict of Stations otherwise dict of meals and their items
+# @param hasStation only true for the C4C, where there are stations
+#
 def buildLocation(TITLE,vals,hasStation=False):
-	#! @param TITLE Title of Location (e.g. C4C)
-	#! @param ID ID of location for the buttons, must be like a variable name
-	#! @param vals if hasStation dict of Stations otherwise dict of meals and their items
-	#! @param hasStation only true for the C4C, where there are stations
 	out = ""
 	ID = makeVariableName(TITLE);
 	out += startLocation(ID,TITLE)
@@ -109,6 +131,12 @@ def buildLocation(TITLE,vals,hasStation=False):
 			out += genMeal(meal,vals[meal])
 	out += endLocation();
 	return out
+
+##
+# Overhead html for a location
+# @param ID a variable name string for location for javascript
+# @param TITLE What the page displays as the title for the location
+#
 def startLocation(ID,TITLE):
 	overhead = (
 	"<div class=\"location\">"+
@@ -124,6 +152,10 @@ def startLocation(ID,TITLE):
 	"<div class=\"startHidden\" id=\""+ID+"\">"
 	)
 	return overhead
+##
+# Starts the html for a specific station
+# 
+# 
 def startStation(ID,TITLE):
 	out = (
 	'<div class="station">'+
@@ -137,11 +169,18 @@ def startStation(ID,TITLE):
 	'<div class="startHidden" id="'+ID+'">'
 	)
 	return out
+##
+# Balances the divs that were opened for each station
+#
 def endStation():
 	return '</div></div>'
+
+##
+# Generates a meal card
+# @param Title Title of meal (e.g. Breakfast)
+# @param Items list of items available at that meal
+#
 def genMeal(Title,Items):
-	#! @param Title Title of meal (e.g. Breakfast)
-	#! @param Items list of items available at that meal
 	out = (
 	'<div class="meal">'+
 	'<h2 class="mealtitle">'+Title+'</h2>'+
@@ -169,9 +208,12 @@ def endBody():
 <html>
 	'''
 	return out
+## Removes all non alpha numeric characters
+# @param s string identifier
 def makeVariableName(s):
 	return ''.join(c for c in s if c.isalnum())
 
+## Pulls the whole thing together. This is where the real work is done.
 def GenerateSite():
 	# Set up Database
 	db = MySQLdb.connect(user=username,db='FamishedBuffs',passwd=password);
@@ -225,13 +267,14 @@ def GenerateSite():
 			page += buildLocation(loc,mealsOut);
 	page += endBody()
 	return page
-
+## Really just calls GenerateSite
 def main():
 	#
 	print 'Content-type: text/html'
 	print
 	print(GenerateSite())
 
+## Parses sql database into a nice string for meals
 def getMealStr(x):
 	Day = x[4]
 	Meal = x[5]
@@ -243,21 +286,3 @@ def getMealStr(x):
 		return Day + " => "+ OpenTime + " to " + CloseTime
 	return Day + " " + Meal + " => "+ OpenTime + " to " + CloseTime
 main()
-	
-"""
-CREATE TABLE IF NOT EXISTS `Hours` (
-  `ID` int(1) PRIMARY KEY AUTO_INCREMENT,
-  `HallID` int(1) NOT NULL,
-  `Open` varchar(6) DEFAULT NULL,
-  `Close` varchar(6) DEFAULT NULL,
-  `Day` varchar(10) DEFAULT NULL,
-  `Meal` varchar(10) DEFAULT NULL
-);
-
-CREATE TABLE IF NOT EXISTS `Meal` (
-  `ID` int(1) PRIMARY KEY AUTO_INCREMENT,
-  `HallID` int(1) NOT NULL,
-  `Item` varchar(64) NOT NULL,
-  `HourID` int(1) NOT NULL
-);
-"""
