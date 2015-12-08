@@ -1,3 +1,5 @@
+-- Hard code dining halls into DiningHalls table
+
 USE FamishedBuffs;
 INSERT INTO `DiningHalls` (`Hall`, `Station`) VALUES
 ('Go Fresh @ Farrand Grab-n-Go', NULL),

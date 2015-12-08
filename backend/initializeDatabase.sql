@@ -1,3 +1,5 @@
+-- Create the database and all tables needed
+
 CREATE DATABASE `FamishedBuffs` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 USE `FamishedBuffs`;
