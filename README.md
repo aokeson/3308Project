@@ -35,23 +35,19 @@ python package lxml
 $ pip install lxml
 ```
 
-mysql:
-
-   Ubuntu:
+mysql for Ubuntu:
 
 ```bash
 $ sudo apt-get install mysql
 ```
 
-   IOS: 
+mysql for IOS: 
 
 ```bash
 $ brew install mysql
 ```
 
-python package MySQLdb:
-
-   Ubuntu:
+python package MySQLdb for Ubuntu:
 
 ```bash
 $ sudo apt-get install python-dev libmysqlclient-dev
