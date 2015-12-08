@@ -37,13 +37,13 @@ $ pip install lxml
 
 mysql:
 
-	*Ubuntu:
+   Ubuntu:
 
 ```bash
 $ sudo apt-get install mysql
 ```
 
-	*IOS: 
+   IOS: 
 
 ```bash
 $ brew install mysql
@@ -51,7 +51,7 @@ $ brew install mysql
 
 python package MySQLdb:
 
-	*Ubuntu:
+   Ubuntu:
 
 ```bash
 $ sudo apt-get install python-dev libmysqlclient-dev
