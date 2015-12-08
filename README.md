@@ -3,9 +3,13 @@
 A web scraper and website to access and display the hours and menus of the dining centers around campus in an intuitive and easy to use way.
 
 By:
+
 Peter Gutenko
+
 Seth Hovestol
+
 Paige Johnson
+
 Alex Okeson
 
 #Repo Organization
@@ -33,13 +37,13 @@ $ pip install lxml
 
 mysql:
 
-	Ubuntu:
+	*Ubuntu:
 
 ```bash
 $ sudo apt-get install mysql
 ```
 
-	IOS: 
+	*IOS: 
 
 ```bash
 $ brew install mysql
@@ -47,8 +51,8 @@ $ brew install mysql
 
 python package MySQLdb:
 
-	Ubuntu:
-	
+	*Ubuntu:
+
 ```bash
 $ sudo apt-get install python-dev libmysqlclient-dev
 $ sudo apt-get install python-mysqldb		
